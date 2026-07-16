@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>La Aventura de Lectura de Jazmín</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #FDF6E3 0%, #FCEFD4 100%);
+    min-height: 100vh; color: #4A3728; user-select: none;
+  }
+
+  .pantalla { display: none; padding: 20px 16px 40px; max-width: 700px; margin: 0 auto; text-align: center; }
+  .pantalla.activa { display: block; }
+
+  .topbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 8px; max-width: 700px; margin: 0 auto; }
+  .btn-casa { font-size: 2rem; background: #fff; border: 3px solid #F0B429; border-radius: 50%; width: 58px; height: 58px; cursor: pointer; }
+  .estrellas { background: #fff; border: 3px solid #F0B429; border-radius: 30px; padding: 8px 18px; font-size: 1.5rem; font-weight: bold; color: #B8860B; }
+
+  h1 { font-size: 2rem; color: #7B4EA8; margin: 10px 0 4px; }
+  .subtitulo { font-size: 1.1rem; color: #9C7A5B; margin-bottom: 20px; }
+  .mascota { font-size: 5rem; animation: flotar 2.5s ease-in-out infinite; display: inline-block; }
+  @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+  .menu-juegos { display: flex; flex-direction: column; gap: 18px; margin-top: 16px; }
+  .btn-juego {
+    display: flex; align-items: center; gap: 16px;
+    background: #fff; border: 4px solid; border-radius: 24px;
+    padding: 16px 20px; cursor: pointer; font-family: inherit; text-align: left;
+    transition: transform 0.15s; box-shadow: 0 5px 0 rgba(0,0,0,0.08);
+  }
+  .btn-juego:active { transform: scale(0.97); }
+  .btn-juego .icono { font-size: 3rem; }
+  .btn-juego .info { flex: 1; }
+  .btn-juego .nombre { font-size: 1.25rem; font-weight: bold; display: block; }
+  .btn-juego .nivel-info { font-size: 0.9rem; color: #9C7A5B; display: block; margin-top: 2px; }
+  .mini-barra { background: #EFE6D5; border-radius: 10px; height: 10px; margin-top: 6px; overflow: hidden; }
+  .mini-fill { height: 10px; border-radius: 10px; transition: width 0.5s; }
+
+  .nivel-badge {
+    display: inline-block; background: #7B4EA8; color: #fff; font-size: 1rem;
+    font-weight: bold; border-radius: 30px; padding: 6px 18px; margin-bottom: 8px;
+  }
+
+  .instruccion { font-size: 1.4rem; font-weight: bold; margin: 10px 0 6px; color: #5B4636; }
+  .btn-oir {
+    font-size: 1.2rem; background: #7B4EA8; color: #fff; border: none;
+    border-radius: 40px; padding: 14px 28px; cursor: pointer; font-family: inherit;
+    font-weight: bold; margin: 8px 0 16px; box-shadow: 0 4px 0 #5A3580;
+  }
+  .btn-oir:active { transform: translateY(3px); box-shadow: 0 1px 0 #5A3580; }
+
+  .dibujo-grande { font-size: 7rem; margin: 4px 0; }
+
+  .opciones { display: flex; flex-direction: column; gap: 14px; margin-top: 10px; }
+  .opciones.fila { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+  .opcion {
+    background: #fff; border: 4px solid #C9E4CA; border-radius: 20px;
+    padding: 18px 24px; font-size: 2rem; font-weight: bold; letter-spacing: 3px;
+    cursor: pointer; font-family: inherit; color: #4A3728;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.08); transition: transform 0.15s; min-width: 130px;
+  }
+  .opcion:active { transform: scale(0.96); }
+  .opcion.bien { background: #C9F2C7; border-color: #4CAF50; animation: saltar 0.5s; }
+  .opcion.mal { background: #FFD6D6; border-color: #E57373; animation: temblar 0.4s; }
+  @keyframes saltar { 30% { transform: scale(1.15); } }
+  @keyframes temblar { 25% { transform: translateX(-8px); } 75% { transform: translateX(8px); } }
+
+  .zona-armado {
+    min-height: 90px; background: #fff; border: 4px dashed #F0B429; border-radius: 20px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    font-size: 2.6rem; font-weight: bold; letter-spacing: 4px; color: #7B4EA8;
+    margin: 12px auto; max-width: 420px; padding: 10px;
+  }
+  .silabas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+  .silaba {
+    background: #FFE9A8; border: 4px solid #F0B429; border-radius: 18px;
+    font-size: 2.2rem; font-weight: bold; padding: 14px 22px; cursor: pointer;
+    font-family: inherit; color: #7A5C00; box-shadow: 0 5px 0 #D9A420; transition: transform 0.15s;
+  }
+  .silaba:active { transform: scale(0.94); }
+  .silaba.usada { opacity: 0.25; pointer-events: none; }
+
+  .celebracion { display: none; font-size: 1.6rem; font-weight: bold; color: #4CAF50; margin-top: 16px; animation: aparecer 0.4s; }
+  .celebracion.ver { display: block; }
+  @keyframes aparecer { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  .btn-siguiente {
+    display: none; font-size: 1.3rem; background: #4CAF50; color: #fff; border: none;
+    border-radius: 40px; padding: 16px 36px; cursor: pointer; font-family: inherit;
+    font-weight: bold; margin-top: 12px; box-shadow: 0 4px 0 #2E7D32;
+  }
+  .btn-siguiente.ver { display: inline-block; }
+  .btn-siguiente:active { transform: translateY(3px); box-shadow: 0 1px 0 #2E7D32; }
+
+  .confeti { position: fixed; top: -20px; font-size: 1.8rem; animation: caer 2.2s linear forwards; pointer-events: none; z-index: 99; }
+  @keyframes caer { to { transform: translateY(110vh) rotate(360deg); } }
+
+  .frase { font-size: 2rem; font-weight: bold; line-height: 1.8; letter-spacing: 2px; margin: 14px 0; }
+  .hueco { display: inline-block; min-width: 110px; border-bottom: 5px dashed #F0B429; color: #7B4EA8; }
+  .op-con-dibujo { display: flex; align-items: center; gap: 12px; justify-content: center; }
+  .op-con-dibujo .mini { font-size: 2.4rem; }
+
+  /* subida de nivel */
+  #subir-nivel {
+    display: none; position: fixed; inset: 0; background: rgba(123,78,168,0.93);
+    z-index: 200; color: #fff; text-align: center; padding: 60px 24px;
+  }
+  #subir-nivel.ver { display: block; animation: aparecer 0.4s; }
+  #subir-nivel .grande { font-size: 5rem; margin-bottom: 16px; }
+  #subir-nivel h2 { font-size: 2rem; margin-bottom: 10px; }
+  #subir-nivel p { font-size: 1.3rem; margin-bottom: 30px; }
+  #subir-nivel button {
+    font-size: 1.4rem; background: #F0B429; color: #5B4000; border: none;
+    border-radius: 40px; padding: 16px 40px; font-family: inherit; font-weight: bold;
+    cursor: pointer; box-shadow: 0 5px 0 #C08F1A;
+  }
+
+  .reset { margin-top: 34px; font-size: 0.8rem; color: #C9B79C; background: none; border: none; font-family: inherit; cursor: pointer; text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    .pantalla { padding: 12px 10px 30px; }
+    h1 { font-size: 1.6rem; }
+    .subtitulo { font-size: 1rem; }
+    .mascota { font-size: 4rem; }
+    .btn-juego .icono { font-size: 2.4rem; }
+    .btn-juego .nombre { font-size: 1.05rem; }
+    .btn-casa { width: 50px; height: 50px; font-size: 1.6rem; }
+    .estrellas { font-size: 1.2rem; padding: 6px 14px; }
+    .instruccion { font-size: 1.15rem; }
+    .dibujo-grande { font-size: 5.2rem; }
+    .btn-oir { font-size: 1.05rem; padding: 12px 22px; }
+    .zona-armado { font-size: 2rem; min-height: 74px; letter-spacing: 3px; }
+    .silaba { font-size: 1.7rem; padding: 12px 18px; }
+    .opcion { font-size: 1.5rem; padding: 14px 16px; letter-spacing: 2px; width: 100%; }
+    .opciones.fila { flex-direction: column; }
+    .frase { font-size: 1.5rem; letter-spacing: 1px; }
+    .hueco { min-width: 80px; }
+    .op-con-dibujo .mini { font-size: 1.9rem; }
+    .btn-siguiente { font-size: 1.15rem; padding: 14px 30px; }
+    #subir-nivel h2 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="btn-casa" onclick="irA('inicio')">🏠</button>
+  <div class="estrellas">⭐ <span id="stars">0</span></div>
+</div>
+
+<!-- INICIO -->
+<div class="pantalla activa" id="inicio">
+  <div class="mascota">🦉</div>
+  <h1>¡Hola Jazmín!</h1>
+  <p class="subtitulo">Soy Lula la lechuza. ¡Vamos a jugar con las palabras!</p>
+  <div class="menu-juegos">
+    <button class="btn-juego" style="border-color:#F0B429" onclick="empezar('sil')">
+      <span class="icono">🧩</span>
+      <span class="info">
+        <span class="nombre" style="color:#B8860B">Armar palabras</span>
+        <span class="nivel-info" id="menu-sil"></span>
+        <span class="mini-barra"><span class="mini-fill" id="barra-sil" style="background:#F0B429"></span></span>
+      </span>
+    </button>
+    <button class="btn-juego" style="border-color:#7B4EA8" onclick="empezar('pal')">
+      <span class="icono">🔍</span>
+      <span class="info">
+        <span class="nombre" style="color:#7B4EA8">¿Cuál es la palabra?</span>
+        <span class="nivel-info" id="menu-pal"></span>
+        <span class="mini-barra"><span class="mini-fill" id="barra-pal" style="background:#7B4EA8"></span></span>
+      </span>
+    </button>
+    <button class="btn-juego" style="border-color:#4CAF50" onclick="empezar('fra')">
+      <span class="icono">📖</span>
+      <span class="info">
+        <span class="nombre" style="color:#2E7D32">Completar la frase</span>
+        <span class="nivel-info" id="menu-fra"></span>
+        <span class="mini-barra"><span class="mini-fill" id="barra-fra" style="background:#4CAF50"></span></span>
+      </span>
+    </button>
+  </div>
+  <button class="reset" onclick="borrarProgreso()">Borrar progreso (para adultos)</button>
+</div>
+
+<!-- JUEGO 1 -->
+<div class="pantalla" id="silabas">
+  <div class="nivel-badge" id="sil-nivel"></div>
+  <div class="dibujo-grande" id="sil-dibujo"></div>
+  <button class="btn-oir" onclick="decir(silActual.palabra)">🔊 Escuchar</button>
+  <p class="instruccion">Tocá las sílabas en orden</p>
+  <div class="zona-armado" id="sil-zona">&nbsp;</div>
+  <div class="silabas" id="sil-fichas"></div>
+  <div class="celebracion" id="sil-cele">🎉 ¡Muy bien! ¡Lo lograste!</div>
+  <button class="btn-siguiente" id="sil-next" onclick="cargarSilaba()">Siguiente ➜</button>
+</div>
+
+<!-- JUEGO 2 -->
+<div class="pantalla" id="palabras">
+  <div class="nivel-badge" id="pal-nivel"></div>
+  <div class="dibujo-grande" id="pal-dibujo"></div>
+  <button class="btn-oir" onclick="decir(palActual.palabra)">🔊 Escuchar</button>
+  <p class="instruccion">¿Cuál es la palabra?</p>
+  <div class="opciones fila" id="pal-opciones"></div>
+  <div class="celebracion" id="pal-cele">🎉 ¡Excelente! ¡Esa es!</div>
+  <button class="btn-siguiente" id="pal-next" onclick="cargarPalabra()">Siguiente ➜</button>
+</div>
+
+<!-- JUEGO 3 -->
+<div class="pantalla" id="frases">
+  <div class="nivel-badge" id="fra-nivel"></div>
+  <p class="instruccion">Completá la frase</p>
+  <button class="btn-oir" onclick="decirFrase()">🔊 Escuchar la frase</button>
+  <div class="frase" id="fra-texto"></div>
+  <div class="opciones" id="fra-opciones"></div>
+  <div class="celebracion" id="fra-cele">🎉 ¡Genial! ¡Leíste la frase!</div>
+  <button class="btn-siguiente" id="fra-next" onclick="cargarFrase()">Siguiente ➜</button>
+</div>
+
+<!-- SUBIDA DE NIVEL -->
+<div id="subir-nivel">
+  <div class="grande">🏆</div>
+  <h2 id="sn-titulo">¡Subiste de nivel!</h2>
+  <p id="sn-texto"></p>
+  <button onclick="cerrarNivel()">¡Seguir jugando!</button>
+</div>
+
+<script>
+/* ================= DATOS POR NIVEL ================= */
+const SILABAS = {
+  1: [
+    { palabra: "gato", emoji: "🐱", partes: ["GA","TO"] },
+    { palabra: "pato", emoji: "🦆", partes: ["PA","TO"] },
+    { palabra: "casa", emoji: "🏠", partes: ["CA","SA"] },
+    { palabra: "luna", emoji: "🌙", partes: ["LU","NA"] },
+    { palabra: "sapo", emoji: "🐸", partes: ["SA","PO"] },
+    { palabra: "vaca", emoji: "🐮", partes: ["VA","CA"] },
+    { palabra: "mono", emoji: "🐵", partes: ["MO","NO"] },
+    { palabra: "oso",  emoji: "🐻", partes: ["O","SO"] },
+    { palabra: "uva",  emoji: "🍇", partes: ["U","VA"] },
+    { palabra: "mano", emoji: "✋", partes: ["MA","NO"] }
+  ],
+  2: [
+    { palabra: "pelota", emoji: "⚽", partes: ["PE","LO","TA"] },
+    { palabra: "banana", emoji: "🍌", partes: ["BA","NA","NA"] },
+    { palabra: "conejo", emoji: "🐰", partes: ["CO","NE","JO"] },
+    { palabra: "tomate", emoji: "🍅", partes: ["TO","MA","TE"] },
+    { palabra: "zapato", emoji: "👟", partes: ["ZA","PA","TO"] },
+    { palabra: "gallina", emoji: "🐔", partes: ["GA","LLI","NA"] },
+    { palabra: "helado", emoji: "🍦", partes: ["HE","LA","DO"] },
+    { palabra: "paleta", emoji: "🏓", partes: ["PA","LE","TA"] }
+  ],
+  3: [
+    { palabra: "mariposa", emoji: "🦋", partes: ["MA","RI","PO","SA"] },
+    { palabra: "elefante", emoji: "🐘", partes: ["E","LE","FAN","TE"] },
+    { palabra: "chocolate", emoji: "🍫", partes: ["CHO","CO","LA","TE"] },
+    { palabra: "bicicleta", emoji: "🚲", partes: ["BI","CI","CLE","TA"] },
+    { palabra: "mandarina", emoji: "🍊", partes: ["MAN","DA","RI","NA"] },
+    { palabra: "cocodrilo", emoji: "🐊", partes: ["CO","CO","DRI","LO"] }
+  ]
+};
+
+const PALABRAS = {
+  1: [
+    { palabra: "sol",  emoji: "☀️", falsas: ["pan","mar"] },
+    { palabra: "pez",  emoji: "🐟", falsas: ["sol","fin"] },
+    { palabra: "flor", emoji: "🌸", falsas: ["tren","luz"] },
+    { palabra: "tren", emoji: "🚂", falsas: ["flor","sal"] },
+    { palabra: "casa", emoji: "🏠", falsas: ["mesa","sopa"] },
+    { palabra: "luna", emoji: "🌙", falsas: ["lupa","rana"] }
+  ],
+  2: [
+    { palabra: "perro", emoji: "🐶", falsas: ["pera","perla"] },
+    { palabra: "libro", emoji: "📕", falsas: ["libre","litro"] },
+    { palabra: "leche", emoji: "🥛", falsas: ["noche","lecho"] },
+    { palabra: "queso", emoji: "🧀", falsas: ["beso","peso"] },
+    { palabra: "manzana", emoji: "🍎", falsas: ["campana","ventana"] },
+    { palabra: "helado", emoji: "🍦", falsas: ["pelado","hilado"] }
+  ],
+  3: [
+    { palabra: "estrella", emoji: "⭐", falsas: ["escuela","estufa","espejo"] },
+    { palabra: "mariposa", emoji: "🦋", falsas: ["mariscos","maravilla","marinera"] },
+    { palabra: "elefante", emoji: "🐘", falsas: ["elegante","estudiante","caminante"] },
+    { palabra: "ballena", emoji: "🐋", falsas: ["gallina","balanza","bandera"] },
+    { palabra: "tortuga", emoji: "🐢", falsas: ["tormenta","lechuga","tortilla"] },
+    { palabra: "caballo", emoji: "🐴", falsas: ["cabello","castillo","camino"] }
+  ]
+};
+
+const FRASES = {
+  1: [
+    { antes: "El gato toma", correcta: {t:"leche", e:"🥛"}, falsas: [{t:"piedras",e:"🪨"},{t:"zapatos",e:"👟"}], leer: "El gato toma leche" },
+    { antes: "El pez nada en el", correcta: {t:"agua", e:"💧"}, falsas: [{t:"fuego",e:"🔥"},{t:"cielo",e:"☁️"}], leer: "El pez nada en el agua" },
+    { antes: "Yo duermo en mi", correcta: {t:"cama", e:"🛏️"}, falsas: [{t:"mesa",e:"🍽️"},{t:"auto",e:"🚗"}], leer: "Yo duermo en mi cama" },
+    { antes: "El perro dice", correcta: {t:"guau", e:"🐶"}, falsas: [{t:"miau",e:"🐱"},{t:"cuac",e:"🦆"}], leer: "El perro dice guau" },
+    { antes: "El sol es de color", correcta: {t:"amarillo", e:"💛"}, falsas: [{t:"verde",e:"💚"},{t:"azul",e:"💙"}], leer: "El sol es de color amarillo" }
+  ],
+  2: [
+    { antes: "La banana es una", correcta: {t:"fruta", e:"🍌"}, falsas: [{t:"flor",e:"🌸"},{t:"casa",e:"🏠"}], leer: "La banana es una fruta" },
+    { antes: "En invierno hace mucho", correcta: {t:"frío", e:"🥶"}, falsas: [{t:"calor",e:"🥵"},{t:"ruido",e:"📢"}], leer: "En invierno hace mucho frío" },
+    { antes: "Los pájaros vuelan por el", correcta: {t:"cielo", e:"☁️"}, falsas: [{t:"mar",e:"🌊"},{t:"piso",e:"🟫"}], leer: "Los pájaros vuelan por el cielo" },
+    { antes: "Me lavo los dientes con el", correcta: {t:"cepillo", e:"🪥"}, falsas: [{t:"tenedor",e:"🍴"},{t:"martillo",e:"🔨"}], leer: "Me lavo los dientes con el cepillo" },
+    { antes: "La abeja hace rica", correcta: {t:"miel", e:"🍯"}, falsas: [{t:"sopa",e:"🍲"},{t:"pizza",e:"🍕"}], leer: "La abeja hace rica miel" }
+  ],
+  3: [
+    { antes: "Antes de cruzar la calle miro para los dos", correcta: {t:"lados"}, falsas: [{t:"dedos"},{t:"gatos"}], leer: "Antes de cruzar la calle miro para los dos lados" },
+    { antes: "Cuando llueve uso mi", correcta: {t:"paraguas"}, falsas: [{t:"pijama"},{t:"almohada"}], leer: "Cuando llueve uso mi paraguas" },
+    { antes: "En la escuela aprendo a leer y a", correcta: {t:"escribir"}, falsas: [{t:"volar"},{t:"ladrar"}], leer: "En la escuela aprendo a leer y a escribir" },
+    { antes: "Las plantas necesitan agua y", correcta: {t:"sol"}, falsas: [{t:"sal"},{t:"tele"}], leer: "Las plantas necesitan agua y sol" },
+    { antes: "Antes de comer me lavo las", correcta: {t:"manos"}, falsas: [{t:"medias"},{t:"llaves"}], leer: "Antes de comer me lavo las manos" }
+  ]
+};
+
+const META = 5;      /* aciertos para subir de nivel */
+const NIVEL_MAX = 3;
+
+/* ================= PROGRESO GUARDADO ================= */
+let prog = { stars: 0, sil: {n:1, a:0}, pal: {n:1, a:0}, fra: {n:1, a:0} };
+
+function cargarProgreso() {
+  try {
+    const g = localStorage.getItem('jazmin_lectura');
+    if (g) prog = JSON.parse(g);
+  } catch(e) {}
+  pintarMenu();
+}
+
+function guardarProgreso() {
+  try { localStorage.setItem('jazmin_lectura', JSON.stringify(prog)); } catch(e) {}
+  pintarMenu();
+}
+
+function borrarProgreso() {
+  if (confirm('¿Borrar todo el progreso de Jazmín y empezar de cero?')) {
+    prog = { stars: 0, sil: {n:1, a:0}, pal: {n:1, a:0}, fra: {n:1, a:0} };
+    guardarProgreso();
+  }
+}
+
+function pintarMenu() {
+  document.getElementById('stars').textContent = prog.stars;
+  [['sil','Armar palabras'],['pal','Buscar palabras'],['fra','Frases']].forEach(([k]) => {
+    const p = prog[k];
+    const enMax = p.n >= NIVEL_MAX && p.a >= META;
+    document.getElementById('menu-'+k).textContent =
+      enMax ? '¡Nivel ' + NIVEL_MAX + ' completado! 🏆' : 'Nivel ' + p.n + ' · ' + p.a + ' de ' + META + ' ⭐';
+    document.getElementById('barra-'+k).style.width = Math.min(100, (p.a/META)*100) + '%';
+  });
+}
+
+/* ================= NÚCLEO ================= */
+let silActual, palActual, fraActual, silProgreso = 0;
+
+function mezclar(a) { return [...a].sort(() => Math.random() - 0.5); }
+function alAzar(lista) { return lista[Math.floor(Math.random()*lista.length)]; }
+
+function irA(id) {
+  document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
+  document.getElementById(id).classList.add('activa');
+  window.speechSynthesis && speechSynthesis.cancel();
+}
+
+function acierto(juego) {
+  prog.stars++;
+  const p = prog[juego];
+  if (p.n < NIVEL_MAX || p.a < META) p.a++;
+  confeti();
+  if (p.a >= META && p.n < NIVEL_MAX) {
+    p.n++; p.a = 0;
+    guardarProgreso();
+    setTimeout(() => mostrarSubida(p.n), 1200);
+  } else {
+    guardarProgreso();
+  }
+}
+
+function mostrarSubida(nivel) {
+  document.getElementById('sn-texto').textContent = '¡Ahora estás en el Nivel ' + nivel + '! Las palabras son un poquito más difíciles. ¡Vos podés!';
+  document.getElementById('subir-nivel').classList.add('ver');
+  decir('¡Felicitaciones! ¡Subiste al nivel ' + nivel + '!');
+  confeti(); setTimeout(confeti, 600);
+}
+
+function cerrarNivel() {
+  document.getElementById('subir-nivel').classList.remove('ver');
+  const activa = document.querySelector('.pantalla.activa').id;
+  if (activa === 'silabas') cargarSilaba();
+  if (activa === 'palabras') cargarPalabra();
+  if (activa === 'frases') cargarFrase();
+}
+
+function confeti() {
+  const cosas = ["🎉","⭐","✨","🌟","🎊"];
+  for (let i = 0; i < 12; i++) {
+    const c = document.createElement('div');
+    c.className = 'confeti';
+    c.textContent = alAzar(cosas);
+    c.style.left = Math.random()*95 + 'vw';
+    c.style.animationDelay = (Math.random()*0.5) + 's';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 2800);
+  }
+}
+
+function decir(texto) {
+  if (!window.speechSynthesis) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(texto);
+  u.lang = 'es-ES'; u.rate = 0.75;
+  const vozEs = speechSynthesis.getVoices().find(v => v.lang.startsWith('es'));
+  if (vozEs) u.voice = vozEs;
+  speechSynthesis.speak(u);
+}
+if (window.speechSynthesis) speechSynthesis.getVoices();
+
+function empezar(juego) {
+  if (juego === 'sil') { cargarSilaba(); irA('silabas'); }
+  if (juego === 'pal') { cargarPalabra(); irA('palabras'); }
+  if (juego === 'fra') { cargarFrase(); irA('frases'); }
+}
+
+/* ================= JUEGO 1: SÍLABAS ================= */
+function cargarSilaba() {
+  const nivel = prog.sil.n;
+  silActual = alAzar(SILABAS[nivel]);
+  silProgreso = 0;
+  document.getElementById('sil-nivel').textContent = 'Nivel ' + nivel;
+  document.getElementById('sil-dibujo').textContent = silActual.emoji;
+  document.getElementById('sil-zona').innerHTML = '&nbsp;';
+  document.getElementById('sil-cele').classList.remove('ver');
+  document.getElementById('sil-next').classList.remove('ver');
+  const cont = document.getElementById('sil-fichas');
+  cont.innerHTML = '';
+  mezclar(silActual.partes.map((s, i) => ({s, i}))).forEach(obj => {
+    const b = document.createElement('button');
+    b.className = 'silaba';
+    b.textContent = obj.s;
+    b.onclick = () => tocarSilaba(b, obj.i);
+    cont.appendChild(b);
+  });
+  decir(silActual.palabra);
+}
+
+function tocarSilaba(btn, orden) {
+  if (orden === silProgreso) {
+    btn.classList.add('usada');
+    silProgreso++;
+    document.getElementById('sil-zona').textContent = silActual.partes.slice(0, silProgreso).join('');
+    decir(silActual.partes[orden].toLowerCase());
+    if (silProgreso === silActual.partes.length) {
+      setTimeout(() => {
+        decir("¡Muy bien! " + silActual.palabra);
+        document.getElementById('sil-cele').classList.add('ver');
+        document.getElementById('sil-next').classList.add('ver');
+        acierto('sil');
+      }, 600);
+    }
+  } else {
+    btn.classList.add('mal');
+    setTimeout(() => btn.classList.remove('mal'), 450);
+  }
+}
+
+/* ================= JUEGO 2: PALABRA CORRECTA ================= */
+function cargarPalabra() {
+  const nivel = prog.pal.n;
+  palActual = alAzar(PALABRAS[nivel]);
+  document.getElementById('pal-nivel').textContent = 'Nivel ' + nivel;
+  document.getElementById('pal-dibujo').textContent = palActual.emoji;
+  document.getElementById('pal-cele').classList.remove('ver');
+  document.getElementById('pal-next').classList.remove('ver');
+  const cont = document.getElementById('pal-opciones');
+  cont.innerHTML = '';
+  mezclar([palActual.palabra, ...palActual.falsas]).forEach(op => {
+    const b = document.createElement('button');
+    b.className = 'opcion';
+    b.textContent = op;
+    b.onclick = () => elegirPalabra(b, op);
+    cont.appendChild(b);
+  });
+  decir(palActual.palabra);
+}
+
+function elegirPalabra(btn, op) {
+  if (op === palActual.palabra) {
+    btn.classList.add('bien');
+    decir("¡Excelente! " + palActual.palabra);
+    document.getElementById('pal-cele').classList.add('ver');
+    document.getElementById('pal-next').classList.add('ver');
+    document.querySelectorAll('#pal-opciones .opcion').forEach(o => o.style.pointerEvents = 'none');
+    acierto('pal');
+  } else {
+    btn.classList.add('mal');
+    decir("Probá otra vez");
+    setTimeout(() => btn.classList.remove('mal'), 450);
+  }
+}
+
+/* ================= JUEGO 3: FRASES ================= */
+function cargarFrase() {
+  const nivel = prog.fra.n;
+  fraActual = alAzar(FRASES[nivel]);
+  document.getElementById('fra-nivel').textContent = 'Nivel ' + nivel;
+  document.getElementById('fra-texto').innerHTML =
+    fraActual.antes + ' <span class="hueco" id="fra-hueco">&nbsp;</span>';
+  document.getElementById('fra-cele').classList.remove('ver');
+  document.getElementById('fra-next').classList.remove('ver');
+  const cont = document.getElementById('fra-opciones');
+  cont.innerHTML = '';
+  mezclar([{...fraActual.correcta, ok:true}, ...fraActual.falsas.map(f => ({...f, ok:false}))]).forEach(op => {
+    const b = document.createElement('button');
+    b.className = 'opcion';
+    b.textContent = op.t;
+    b.onclick = () => elegirFrase(b, op);
+    cont.appendChild(b);
+  });
+  decirFrase();
+}
+
+function decirFrase() { decir(fraActual.antes + " ..."); }
+
+function elegirFrase(btn, op) {
+  if (op.ok) {
+    btn.classList.add('bien');
+    document.getElementById('fra-hueco').textContent = op.t;
+    decir("¡Genial! " + fraActual.leer);
+    document.getElementById('fra-cele').classList.add('ver');
+    document.getElementById('fra-next').classList.add('ver');
+    document.querySelectorAll('#fra-opciones .opcion').forEach(o => o.style.pointerEvents = 'none');
+    acierto('fra');
+  } else {
+    btn.classList.add('mal');
+    decir("Probá otra vez");
+    setTimeout(() => btn.classList.remove('mal'), 450);
+  }
+}
+
+cargarProgreso();
+</script>
+</body>
+</html>
