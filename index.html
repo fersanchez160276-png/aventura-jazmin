@@ -11,17 +11,26 @@
   .pantalla { display: none; padding: 20px 16px 40px; max-width: 700px; margin: 0 auto; text-align: center; }
   .pantalla.activa { display: block; }
 
+  /* BIENVENIDA */
+  #bienvenida { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 40px 24px; text-align: center; }
+  #bienvenida .mascota-big { font-size: 7rem; animation: flotar 2.5s ease-in-out infinite; }
+  #bienvenida h1 { font-size: 2.4rem; color: #7B4EA8; margin: 16px 0 10px; }
+  #bienvenida p { font-size: 1.3rem; color: #9C7A5B; margin-bottom: 32px; }
+  #btn-empezar { font-size: 1.6rem; background: #7B4EA8; color: #fff; border: none; border-radius: 50px; padding: 22px 50px; cursor: pointer; font-family: inherit; font-weight: bold; box-shadow: 0 6px 0 #5A3580; animation: pulsar 1.5s ease-in-out infinite; }
+  #btn-empezar:active { transform: translateY(4px); box-shadow: 0 2px 0 #5A3580; }
+  @keyframes pulsar { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+
   .topbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 8px; max-width: 700px; margin: 0 auto; }
   .btn-casa { font-size: 2rem; background: #fff; border: 3px solid #F0B429; border-radius: 50%; width: 62px; height: 62px; cursor: pointer; }
   .estrellas { background: #fff; border: 3px solid #F0B429; border-radius: 30px; padding: 10px 20px; font-size: 1.6rem; font-weight: bold; color: #B8860B; }
 
   h1 { font-size: 2.2rem; color: #7B4EA8; margin: 10px 0 4px; }
   .subtitulo { font-size: 1.2rem; color: #9C7A5B; margin-bottom: 20px; }
-  .mascota { font-size: 6rem; animation: flotar 2.5s ease-in-out infinite; display: inline-block; }
+  .mascota { font-size: 5.5rem; animation: flotar 2.5s ease-in-out infinite; display: inline-block; }
   @keyframes flotar { 0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)} }
 
   .menu-juegos { display: flex; flex-direction: column; gap: 18px; margin-top: 16px; }
-  .btn-juego { display: flex; align-items: center; gap: 16px; background: #fff; border: 4px solid; border-radius: 24px; padding: 20px 22px; cursor: pointer; font-family: inherit; text-align: left; transition: transform 0.15s; box-shadow: 0 5px 0 rgba(0,0,0,0.08); }
+  .btn-juego { display: flex; align-items: center; gap: 16px; background: #fff; border: 4px solid; border-radius: 24px; padding: 20px 22px; cursor: pointer; font-family: inherit; text-align: left; box-shadow: 0 5px 0 rgba(0,0,0,0.08); }
   .btn-juego:active { transform: scale(0.97); }
   .btn-juego .icono { font-size: 3.2rem; }
   .btn-juego .info { flex: 1; }
@@ -38,16 +47,16 @@
 
   .opciones { display: flex; flex-direction: column; gap: 16px; margin-top: 12px; }
   .opciones.fila { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-  .opcion { background: #fff; border: 4px solid #C9E4CA; border-radius: 20px; padding: 20px 26px; font-size: 2.2rem; font-weight: bold; letter-spacing: 3px; cursor: pointer; font-family: inherit; color: #4A3728; box-shadow: 0 5px 0 rgba(0,0,0,0.08); transition: transform 0.15s; min-width: 140px; }
+  .opcion { background: #fff; border: 4px solid #C9E4CA; border-radius: 20px; padding: 20px 26px; font-size: 2.2rem; font-weight: bold; letter-spacing: 3px; cursor: pointer; font-family: inherit; color: #4A3728; box-shadow: 0 5px 0 rgba(0,0,0,0.08); min-width: 140px; }
   .opcion:active { transform: scale(0.96); }
   .opcion.bien { background: #C9F2C7; border-color: #4CAF50; animation: saltar 0.5s; }
   .opcion.mal { background: #FFD6D6; border-color: #E57373; animation: temblar 0.4s; }
   @keyframes saltar { 30%{transform:scale(1.15)} }
   @keyframes temblar { 25%{transform:translateX(-8px)} 75%{transform:translateX(8px)} }
 
-  .zona-armado { min-height: 100px; background: #fff; border: 4px dashed #F0B429; border-radius: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 2.8rem; font-weight: bold; letter-spacing: 4px; color: #7B4EA8; margin: 14px auto; max-width: 440px; padding: 12px; }
+  .zona-armado { min-height: 100px; background: #fff; border: 4px dashed #F0B429; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.8rem; font-weight: bold; letter-spacing: 4px; color: #7B4EA8; margin: 14px auto; max-width: 440px; padding: 12px; }
   .silabas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
-  .silaba { background: #FFE9A8; border: 4px solid #F0B429; border-radius: 18px; font-size: 2.4rem; font-weight: bold; padding: 16px 24px; cursor: pointer; font-family: inherit; color: #7A5C00; box-shadow: 0 5px 0 #D9A420; transition: transform 0.15s; }
+  .silaba { background: #FFE9A8; border: 4px solid #F0B429; border-radius: 18px; font-size: 2.4rem; font-weight: bold; padding: 16px 24px; cursor: pointer; font-family: inherit; color: #7A5C00; box-shadow: 0 5px 0 #D9A420; }
   .silaba:active { transform: scale(0.94); }
   .silaba.usada { opacity: 0.25; pointer-events: none; }
 
@@ -57,129 +66,121 @@
 
   .btn-siguiente { display: none; font-size: 1.4rem; background: #4CAF50; color: #fff; border: none; border-radius: 40px; padding: 18px 40px; cursor: pointer; font-family: inherit; font-weight: bold; margin-top: 14px; box-shadow: 0 4px 0 #2E7D32; }
   .btn-siguiente.ver { display: inline-block; }
-  .btn-siguiente:active { transform: translateY(3px); box-shadow: 0 1px 0 #2E7D32; }
+  .btn-siguiente:active { transform: translateY(3px); }
 
   .confeti { position: fixed; top: -20px; font-size: 2rem; animation: caer 2.2s linear forwards; pointer-events: none; z-index: 99; }
   @keyframes caer { to{transform:translateY(110vh) rotate(360deg)} }
 
-  .frase { font-size: 2.1rem; font-weight: bold; line-height: 1.8; letter-spacing: 2px; margin: 14px 0; }
+  .frase { font-size: 2.1rem; font-weight: bold; line-height: 1.8; margin: 14px 0; }
   .hueco { display: inline-block; min-width: 120px; border-bottom: 5px dashed #F0B429; color: #7B4EA8; }
 
-  /* SOPA DE LETRAS */
-  .palabras-buscar { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 12px 0 18px; }
-  .palabra-chip { background: #FFE9A8; border: 3px solid #F0B429; border-radius: 20px; padding: 10px 18px; font-size: 1.4rem; font-weight: bold; color: #7A5C00; transition: all 0.3s; }
+  /* SOPA */
+  .palabras-buscar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 10px 0 16px; }
+  .palabra-chip { background: #FFE9A8; border: 3px solid #F0B429; border-radius: 20px; padding: 10px 18px; font-size: 1.4rem; font-weight: bold; color: #7A5C00; }
   .palabra-chip.encontrada { background: #C9F2C7; border-color: #4CAF50; text-decoration: line-through; color: #2E7D32; }
-
-  .sopa-grid { display: inline-grid; gap: 6px; margin: 0 auto 18px; }
-  .sopa-celda { width: 64px; height: 64px; background: #fff; border: 3px solid #E8D8B0; border-radius: 14px; font-size: 1.8rem; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #4A3728; transition: all 0.15s; font-family: inherit; }
-  .sopa-celda:active { transform: scale(0.92); }
+  .sopa-grid { display: inline-grid; gap: 6px; margin: 0 auto 16px; touch-action: none; }
+  .sopa-celda { width: 64px; height: 64px; background: #fff; border: 3px solid #E8D8B0; border-radius: 14px; font-size: 1.8rem; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #4A3728; font-family: inherit; transition: background 0.1s, border-color 0.1s; }
   .sopa-celda.seleccionada { background: #FFE9A8; border-color: #F0B429; transform: scale(1.08); }
   .sopa-celda.encontrada-ok { background: #C9F2C7; border-color: #4CAF50; }
   .sopa-celda.error-sel { background: #FFD6D6; border-color: #E57373; animation: temblar 0.4s; }
-  .sopa-puntaje { font-size: 1.3rem; color: #7B4EA8; font-weight: bold; margin-bottom: 10px; }
+  .sopa-puntaje { font-size: 1.3rem; color: #7B4EA8; font-weight: bold; margin-bottom: 8px; }
 
   #subir-nivel { display: none; position: fixed; inset: 0; background: rgba(123,78,168,0.93); z-index: 200; color: #fff; text-align: center; padding: 60px 24px; }
-  #subir-nivel.ver { display: block; animation: aparecer 0.4s; }
+  #subir-nivel.ver { display: flex; flex-direction: column; align-items: center; justify-content: center; animation: aparecer 0.4s; }
   #subir-nivel .grande { font-size: 5rem; margin-bottom: 16px; }
   #subir-nivel h2 { font-size: 2.2rem; margin-bottom: 10px; }
   #subir-nivel p { font-size: 1.4rem; margin-bottom: 30px; }
-  #subir-nivel button { font-size: 1.5rem; background: #F0B429; color: #5B4000; border: none; border-radius: 40px; padding: 18px 44px; font-family: inherit; font-weight: bold; cursor: pointer; box-shadow: 0 5px 0 #C08F1A; }
+  #subir-nivel button { font-size: 1.5rem; background: #F0B429; color: #5B4000; border: none; border-radius: 40px; padding: 18px 44px; font-family: inherit; font-weight: bold; cursor: pointer; }
 
   .reset { margin-top: 34px; font-size: 0.85rem; color: #C9B79C; background: none; border: none; font-family: inherit; cursor: pointer; text-decoration: underline; }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <button class="btn-casa" onclick="irA('inicio')">🏠</button>
-  <div class="estrellas">⭐ <span id="stars">0</span></div>
-</div>
-
-<!-- INICIO -->
-<div class="pantalla activa" id="inicio">
-  <div class="mascota">🦉</div>
+<!-- BIENVENIDA — desbloquea el audio -->
+<div id="bienvenida">
+  <div class="mascota-big">🦉</div>
   <h1>¡Hola Jazmín!</h1>
-  <p class="subtitulo">Soy Lula la lechuza. ¡Vamos a jugar!</p>
-  <div class="menu-juegos">
-    <button class="btn-juego" style="border-color:#F0B429" onclick="empezar('sil')">
-      <span class="icono">🧩</span>
-      <span class="info">
-        <span class="nombre" style="color:#B8860B">Armar palabras</span>
-        <span class="nivel-info" id="menu-sil"></span>
-        <span class="mini-barra"><span class="mini-fill" id="barra-sil" style="background:#F0B429"></span></span>
-      </span>
-    </button>
-    <button class="btn-juego" style="border-color:#7B4EA8" onclick="empezar('pal')">
-      <span class="icono">🔍</span>
-      <span class="info">
-        <span class="nombre" style="color:#7B4EA8">¿Cuál es la palabra?</span>
-        <span class="nivel-info" id="menu-pal"></span>
-        <span class="mini-barra"><span class="mini-fill" id="barra-pal" style="background:#7B4EA8"></span></span>
-      </span>
-    </button>
-    <button class="btn-juego" style="border-color:#4CAF50" onclick="empezar('fra')">
-      <span class="icono">📖</span>
-      <span class="info">
-        <span class="nombre" style="color:#2E7D32">Completar la frase</span>
-        <span class="nivel-info" id="menu-fra"></span>
-        <span class="mini-barra"><span class="mini-fill" id="barra-fra" style="background:#4CAF50"></span></span>
-      </span>
-    </button>
-    <button class="btn-juego" style="border-color:#E57373" onclick="empezar('sopa')">
-      <span class="icono">🔤</span>
-      <span class="info">
-        <span class="nombre" style="color:#C62828">Sopa de letras</span>
-        <span class="nivel-info" id="menu-sopa"></span>
-        <span class="mini-barra"><span class="mini-fill" id="barra-sopa" style="background:#E57373"></span></span>
-      </span>
-    </button>
+  <p>Soy Lula la lechuza.<br>¡Vamos a jugar con las palabras!</p>
+  <button id="btn-empezar" onclick="arrancar()">¡Jugar! 🎮</button>
+</div>
+
+<div id="app" style="display:none">
+  <div class="topbar">
+    <button class="btn-casa" onclick="irA('inicio')">🏠</button>
+    <div class="estrellas">⭐ <span id="stars">0</span></div>
   </div>
-  <button class="reset" onclick="borrarProgreso()">Borrar progreso (para adultos)</button>
-</div>
 
-<!-- JUEGO 1: SÍLABAS -->
-<div class="pantalla" id="silabas">
-  <div class="nivel-badge" id="sil-nivel"></div>
-  <div class="dibujo-grande" id="sil-dibujo"></div>
-  <button class="btn-oir" onclick="decir(silActual.palabra)">🔊 Escuchar</button>
-  <p class="instruccion">Tocá las sílabas en orden</p>
-  <div class="zona-armado" id="sil-zona">&nbsp;</div>
-  <div class="silabas" id="sil-fichas"></div>
-  <div class="celebracion" id="sil-cele">🎉 ¡Muy bien! ¡Lo lograste!</div>
-  <button class="btn-siguiente" id="sil-next" onclick="cargarSilaba()">Siguiente ➜</button>
-</div>
+  <!-- INICIO -->
+  <div class="pantalla activa" id="inicio">
+    <div class="mascota">🦉</div>
+    <h1>¡Hola Jazmín!</h1>
+    <p class="subtitulo">¿A qué jugamos hoy?</p>
+    <div class="menu-juegos">
+      <button class="btn-juego" style="border-color:#F0B429" onclick="empezar('sil')">
+        <span class="icono">🧩</span>
+        <span class="info"><span class="nombre" style="color:#B8860B">Armar palabras</span><span class="nivel-info" id="menu-sil"></span><span class="mini-barra"><span class="mini-fill" id="barra-sil" style="background:#F0B429"></span></span></span>
+      </button>
+      <button class="btn-juego" style="border-color:#7B4EA8" onclick="empezar('pal')">
+        <span class="icono">🔍</span>
+        <span class="info"><span class="nombre" style="color:#7B4EA8">¿Cuál es la palabra?</span><span class="nivel-info" id="menu-pal"></span><span class="mini-barra"><span class="mini-fill" id="barra-pal" style="background:#7B4EA8"></span></span></span>
+      </button>
+      <button class="btn-juego" style="border-color:#4CAF50" onclick="empezar('fra')">
+        <span class="icono">📖</span>
+        <span class="info"><span class="nombre" style="color:#2E7D32">Completar la frase</span><span class="nivel-info" id="menu-fra"></span><span class="mini-barra"><span class="mini-fill" id="barra-fra" style="background:#4CAF50"></span></span></span>
+      </button>
+      <button class="btn-juego" style="border-color:#E57373" onclick="empezar('sopa')">
+        <span class="icono">🔤</span>
+        <span class="info"><span class="nombre" style="color:#C62828">Sopa de letras</span><span class="nivel-info" id="menu-sopa"></span><span class="mini-barra"><span class="mini-fill" id="barra-sopa" style="background:#E57373"></span></span></span>
+      </button>
+    </div>
+    <button class="reset" onclick="borrarProgreso()">Borrar progreso (para adultos)</button>
+  </div>
 
-<!-- JUEGO 2: PALABRAS -->
-<div class="pantalla" id="palabras">
-  <div class="nivel-badge" id="pal-nivel"></div>
-  <div class="dibujo-grande" id="pal-dibujo"></div>
-  <button class="btn-oir" onclick="decir(palActual.palabra)">🔊 Escuchar</button>
-  <p class="instruccion">¿Cuál es la palabra?</p>
-  <div class="opciones fila" id="pal-opciones"></div>
-  <div class="celebracion" id="pal-cele">🎉 ¡Excelente! ¡Esa es!</div>
-  <button class="btn-siguiente" id="pal-next" onclick="cargarPalabra()">Siguiente ➜</button>
-</div>
+  <!-- SÍLABAS -->
+  <div class="pantalla" id="silabas">
+    <div class="nivel-badge" id="sil-nivel"></div>
+    <div class="dibujo-grande" id="sil-dibujo"></div>
+    <button class="btn-oir" onclick="decir(silActual.palabra)">🔊 Escuchar</button>
+    <p class="instruccion">Tocá las sílabas en orden</p>
+    <div class="zona-armado" id="sil-zona">&nbsp;</div>
+    <div class="silabas" id="sil-fichas"></div>
+    <div class="celebracion" id="sil-cele">🎉 ¡Muy bien Jazmín!</div>
+    <button class="btn-siguiente" id="sil-next" onclick="cargarSilaba()">Siguiente ➜</button>
+  </div>
 
-<!-- JUEGO 3: FRASES -->
-<div class="pantalla" id="frases">
-  <div class="nivel-badge" id="fra-nivel"></div>
-  <p class="instruccion">Completá la frase</p>
-  <button class="btn-oir" onclick="decirFrase()">🔊 Escuchar</button>
-  <div class="frase" id="fra-texto"></div>
-  <div class="opciones" id="fra-opciones"></div>
-  <div class="celebracion" id="fra-cele">🎉 ¡Genial! ¡Leíste la frase!</div>
-  <button class="btn-siguiente" id="fra-next" onclick="cargarFrase()">Siguiente ➜</button>
-</div>
+  <!-- PALABRAS -->
+  <div class="pantalla" id="palabras">
+    <div class="nivel-badge" id="pal-nivel"></div>
+    <div class="dibujo-grande" id="pal-dibujo"></div>
+    <button class="btn-oir" onclick="decir(palActual.palabra)">🔊 Escuchar</button>
+    <p class="instruccion">¿Cuál es la palabra?</p>
+    <div class="opciones fila" id="pal-opciones"></div>
+    <div class="celebracion" id="pal-cele">🎉 ¡Excelente!</div>
+    <button class="btn-siguiente" id="pal-next" onclick="cargarPalabra()">Siguiente ➜</button>
+  </div>
 
-<!-- JUEGO 4: SOPA -->
-<div class="pantalla" id="sopa-pantalla">
-  <div class="nivel-badge" id="sopa-nivel"></div>
-  <p class="instruccion">Encontrá las palabras</p>
-  <p class="sopa-puntaje">Encontradas: <span id="sopa-enc">0</span> de <span id="sopa-total">0</span></p>
-  <div class="palabras-buscar" id="sopa-chips"></div>
-  <div class="sopa-grid" id="sopa-grid"></div>
-  <div class="celebracion" id="sopa-cele">🎉 ¡Encontraste todas!</div>
-  <button class="btn-siguiente" id="sopa-next" onclick="cargarSopa()">Siguiente ➜</button>
+  <!-- FRASES -->
+  <div class="pantalla" id="frases">
+    <div class="nivel-badge" id="fra-nivel"></div>
+    <p class="instruccion">Completá la frase</p>
+    <button class="btn-oir" onclick="decirFrase()">🔊 Escuchar</button>
+    <div class="frase" id="fra-texto"></div>
+    <div class="opciones" id="fra-opciones"></div>
+    <div class="celebracion" id="fra-cele">🎉 ¡Genial!</div>
+    <button class="btn-siguiente" id="fra-next" onclick="cargarFrase()">Siguiente ➜</button>
+  </div>
+
+  <!-- SOPA -->
+  <div class="pantalla" id="sopa-pantalla">
+    <div class="nivel-badge" id="sopa-nivel"></div>
+    <p class="instruccion">Encontrá las palabras</p>
+    <p class="sopa-puntaje">Encontradas: <span id="sopa-enc">0</span> de <span id="sopa-total">0</span></p>
+    <div class="palabras-buscar" id="sopa-chips"></div>
+    <div class="sopa-grid" id="sopa-grid"></div>
+    <div class="celebracion" id="sopa-cele">🎉 ¡Encontraste todas!</div>
+    <button class="btn-siguiente" id="sopa-next" onclick="cargarSopa()">Siguiente ➜</button>
+  </div>
 </div>
 
 <!-- SUBIDA DE NIVEL -->
@@ -191,142 +192,74 @@
 </div>
 
 <script>
+/* ===== DATOS ===== */
 const SILABAS = {
-  1:[
-    {palabra:"gato",emoji:"🐱",partes:["GA","TO"]},
-    {palabra:"pato",emoji:"🦆",partes:["PA","TO"]},
-    {palabra:"casa",emoji:"🏠",partes:["CA","SA"]},
-    {palabra:"luna",emoji:"🌙",partes:["LU","NA"]},
-    {palabra:"sapo",emoji:"🐸",partes:["SA","PO"]},
-    {palabra:"vaca",emoji:"🐮",partes:["VA","CA"]},
-    {palabra:"mono",emoji:"🐵",partes:["MO","NO"]},
-    {palabra:"oso",emoji:"🐻",partes:["O","SO"]},
-    {palabra:"uva",emoji:"🍇",partes:["U","VA"]},
-    {palabra:"mano",emoji:"✋",partes:["MA","NO"]}
-  ],
-  2:[
-    {palabra:"pelota",emoji:"⚽",partes:["PE","LO","TA"]},
-    {palabra:"banana",emoji:"🍌",partes:["BA","NA","NA"]},
-    {palabra:"conejo",emoji:"🐰",partes:["CO","NE","JO"]},
-    {palabra:"tomate",emoji:"🍅",partes:["TO","MA","TE"]},
-    {palabra:"zapato",emoji:"👟",partes:["ZA","PA","TO"]},
-    {palabra:"gallina",emoji:"🐔",partes:["GA","LLI","NA"]},
-    {palabra:"helado",emoji:"🍦",partes:["HE","LA","DO"]},
-    {palabra:"camisa",emoji:"👕",partes:["CA","MI","SA"]}
-  ],
-  3:[
-    {palabra:"mariposa",emoji:"🦋",partes:["MA","RI","PO","SA"]},
-    {palabra:"elefante",emoji:"🐘",partes:["E","LE","FAN","TE"]},
-    {palabra:"chocolate",emoji:"🍫",partes:["CHO","CO","LA","TE"]},
-    {palabra:"bicicleta",emoji:"🚲",partes:["BI","CI","CLE","TA"]},
-    {palabra:"mandarina",emoji:"🍊",partes:["MAN","DA","RI","NA"]},
-    {palabra:"cocodrilo",emoji:"🐊",partes:["CO","CO","DRI","LO"]},
-    {palabra:"zanahoria",emoji:"🥕",partes:["ZA","NA","HO","RIA"]},
-    {palabra:"calabaza",emoji:"🎃",partes:["CA","LA","BA","ZA"]}
-  ],
-  4:[
-    {palabra:"hipopotamo",emoji:"🦛",partes:["HI","PO","PO","TA","MO"]},
-    {palabra:"dinosaurio",emoji:"🦕",partes:["DI","NO","SAU","RIO"]},
-    {palabra:"murciélago",emoji:"🦇",partes:["MUR","CIÉ","LA","GO"]},
-    {palabra:"girasol",emoji:"🌻",partes:["GI","RA","SOL"]},
-    {palabra:"paraguas",emoji:"☂️",partes:["PA","RA","GUAS"]},
-    {palabra:"tortilla",emoji:"🫓",partes:["TOR","TI","LLA"]},
-    {palabra:"cumpleaños",emoji:"🎂",partes:["CUM","PLE","A","ÑOS"]},
-    {palabra:"mariposa",emoji:"🦋",partes:["MA","RI","PO","SA"]}
-  ],
-  5:[
-    {palabra:"escritura",emoji:"✍️",partes:["ES","CRI","TU","RA"]},
-    {palabra:"electricidad",emoji:"⚡",partes:["E","LEC","TRI","CI","DAD"]},
-    {palabra:"temperatura",emoji:"🌡️",partes:["TEM","PE","RA","TU","RA"]},
-    {palabra:"extraordinario",emoji:"🌟",partes:["EX","TRA","OR","DI","NA","RIO"]},
-    {palabra:"comunicacion",emoji:"📡",partes:["CO","MU","NI","CA","CION"]},
-    {palabra:"transportar",emoji:"🚛",partes:["TRANS","POR","TAR"]},
-    {palabra:"construccion",emoji:"🏗️",partes:["CONS","TRUC","CION"]},
-    {palabra:"refrigerador",emoji:"🧊",partes:["RE","FRI","GE","RA","DOR"]}
-  ]
+  1:[{palabra:"gato",emoji:"🐱",partes:["GA","TO"]},{palabra:"pato",emoji:"🦆",partes:["PA","TO"]},{palabra:"casa",emoji:"🏠",partes:["CA","SA"]},{palabra:"luna",emoji:"🌙",partes:["LU","NA"]},{palabra:"sapo",emoji:"🐸",partes:["SA","PO"]},{palabra:"vaca",emoji:"🐮",partes:["VA","CA"]},{palabra:"mono",emoji:"🐵",partes:["MO","NO"]},{palabra:"oso",emoji:"🐻",partes:["O","SO"]},{palabra:"uva",emoji:"🍇",partes:["U","VA"]},{palabra:"mano",emoji:"✋",partes:["MA","NO"]}],
+  2:[{palabra:"pelota",emoji:"⚽",partes:["PE","LO","TA"]},{palabra:"banana",emoji:"🍌",partes:["BA","NA","NA"]},{palabra:"conejo",emoji:"🐰",partes:["CO","NE","JO"]},{palabra:"tomate",emoji:"🍅",partes:["TO","MA","TE"]},{palabra:"zapato",emoji:"👟",partes:["ZA","PA","TO"]},{palabra:"gallina",emoji:"🐔",partes:["GA","LLI","NA"]},{palabra:"helado",emoji:"🍦",partes:["HE","LA","DO"]},{palabra:"camisa",emoji:"👕",partes:["CA","MI","SA"]}],
+  3:[{palabra:"mariposa",emoji:"🦋",partes:["MA","RI","PO","SA"]},{palabra:"elefante",emoji:"🐘",partes:["E","LE","FAN","TE"]},{palabra:"chocolate",emoji:"🍫",partes:["CHO","CO","LA","TE"]},{palabra:"bicicleta",emoji:"🚲",partes:["BI","CI","CLE","TA"]},{palabra:"mandarina",emoji:"🍊",partes:["MAN","DA","RI","NA"]},{palabra:"cocodrilo",emoji:"🐊",partes:["CO","CO","DRI","LO"]},{palabra:"zanahoria",emoji:"🥕",partes:["ZA","NA","HO","RIA"]},{palabra:"calabaza",emoji:"🎃",partes:["CA","LA","BA","ZA"]}],
+  4:[{palabra:"hipopotamo",emoji:"🦛",partes:["HI","PO","PO","TA","MO"]},{palabra:"dinosaurio",emoji:"🦕",partes:["DI","NO","SAU","RIO"]},{palabra:"murciélago",emoji:"🦇",partes:["MUR","CIÉ","LA","GO"]},{palabra:"girasol",emoji:"🌻",partes:["GI","RA","SOL"]},{palabra:"paraguas",emoji:"☂️",partes:["PA","RA","GUAS"]},{palabra:"cumpleaños",emoji:"🎂",partes:["CUM","PLE","A","ÑOS"]},{palabra:"tortilla",emoji:"🫓",partes:["TOR","TI","LLA"]},{palabra:"zanahoria",emoji:"🥕",partes:["ZA","NA","HO","RIA"]}],
+  5:[{palabra:"escritura",emoji:"✍️",partes:["ES","CRI","TU","RA"]},{palabra:"electricidad",emoji:"⚡",partes:["E","LEC","TRI","CI","DAD"]},{palabra:"temperatura",emoji:"🌡️",partes:["TEM","PE","RA","TU","RA"]},{palabra:"extraordinario",emoji:"🌟",partes:["EX","TRA","OR","DI","NA","RIO"]},{palabra:"comunicacion",emoji:"📡",partes:["CO","MU","NI","CA","CION"]},{palabra:"transportar",emoji:"🚛",partes:["TRANS","POR","TAR"]},{palabra:"refrigerador",emoji:"🧊",partes:["RE","FRI","GE","RA","DOR"]},{palabra:"construccion",emoji:"🏗️",partes:["CONS","TRUC","CION"]}]
 };
-
 const PALABRAS = {
-  1:[
-    {palabra:"sol",emoji:"☀️",falsas:["pan","mar"]},
-    {palabra:"pez",emoji:"🐟",falsas:["sol","fin"]},
-    {palabra:"flor",emoji:"🌸",falsas:["tren","luz"]},
-    {palabra:"casa",emoji:"🏠",falsas:["mesa","sopa"]},
-    {palabra:"luna",emoji:"🌙",falsas:["lupa","rana"]}
-  ],
-  2:[
-    {palabra:"perro",emoji:"🐶",falsas:["pera","perla"]},
-    {palabra:"libro",emoji:"📕",falsas:["libre","litro"]},
-    {palabra:"leche",emoji:"🥛",falsas:["noche","lecho"]},
-    {palabra:"queso",emoji:"🧀",falsas:["beso","peso"]},
-    {palabra:"manzana",emoji:"🍎",falsas:["campana","ventana"]}
-  ],
-  3:[
-    {palabra:"estrella",emoji:"⭐",falsas:["escuela","estufa","espejo"]},
-    {palabra:"mariposa",emoji:"🦋",falsas:["mariscos","maravilla","marinera"]},
-    {palabra:"elefante",emoji:"🐘",falsas:["elegante","estudiante","caminante"]},
-    {palabra:"ballena",emoji:"🐋",falsas:["gallina","balanza","bandera"]},
-    {palabra:"tortuga",emoji:"🐢",falsas:["tormenta","lechuga","tortilla"]}
-  ]
+  1:[{palabra:"sol",emoji:"☀️",falsas:["pan","mar"]},{palabra:"pez",emoji:"🐟",falsas:["sol","fin"]},{palabra:"flor",emoji:"🌸",falsas:["tren","luz"]},{palabra:"casa",emoji:"🏠",falsas:["mesa","sopa"]},{palabra:"luna",emoji:"🌙",falsas:["lupa","rana"]}],
+  2:[{palabra:"perro",emoji:"🐶",falsas:["pera","perla"]},{palabra:"libro",emoji:"📕",falsas:["libre","litro"]},{palabra:"leche",emoji:"🥛",falsas:["noche","lecho"]},{palabra:"queso",emoji:"🧀",falsas:["beso","peso"]},{palabra:"manzana",emoji:"🍎",falsas:["campana","ventana"]}],
+  3:[{palabra:"estrella",emoji:"⭐",falsas:["escuela","estufa","espejo"]},{palabra:"mariposa",emoji:"🦋",falsas:["mariscos","maravilla","marinera"]},{palabra:"elefante",emoji:"🐘",falsas:["elegante","estudiante","caminante"]},{palabra:"ballena",emoji:"🐋",falsas:["gallina","balanza","bandera"]},{palabra:"tortuga",emoji:"🐢",falsas:["tormenta","lechuga","tortilla"]}]
 };
-
 const FRASES = {
-  1:[
-    {antes:"El gato toma",correcta:{t:"leche"},falsas:[{t:"piedras"},{t:"zapatos"}],leer:"El gato toma leche"},
-    {antes:"El pez nada en el",correcta:{t:"agua"},falsas:[{t:"fuego"},{t:"cielo"}],leer:"El pez nada en el agua"},
-    {antes:"Yo duermo en mi",correcta:{t:"cama"},falsas:[{t:"mesa"},{t:"auto"}],leer:"Yo duermo en mi cama"},
-    {antes:"El perro dice",correcta:{t:"guau"},falsas:[{t:"miau"},{t:"cuac"}],leer:"El perro dice guau"},
-    {antes:"El sol es de color",correcta:{t:"amarillo"},falsas:[{t:"verde"},{t:"azul"}],leer:"El sol es de color amarillo"}
-  ],
-  2:[
-    {antes:"La banana es una",correcta:{t:"fruta"},falsas:[{t:"flor"},{t:"casa"}],leer:"La banana es una fruta"},
-    {antes:"En invierno hace mucho",correcta:{t:"frío"},falsas:[{t:"calor"},{t:"ruido"}],leer:"En invierno hace mucho frío"},
-    {antes:"Los pájaros vuelan por el",correcta:{t:"cielo"},falsas:[{t:"mar"},{t:"piso"}],leer:"Los pájaros vuelan por el cielo"},
-    {antes:"Me lavo los dientes con el",correcta:{t:"cepillo"},falsas:[{t:"tenedor"},{t:"martillo"}],leer:"Me lavo los dientes con el cepillo"},
-    {antes:"La abeja hace rica",correcta:{t:"miel"},falsas:[{t:"sopa"},{t:"pizza"}],leer:"La abeja hace rica miel"}
-  ],
-  3:[
-    {antes:"Antes de cruzar la calle miro para los dos",correcta:{t:"lados"},falsas:[{t:"dedos"},{t:"gatos"}],leer:"Antes de cruzar la calle miro para los dos lados"},
-    {antes:"Cuando llueve uso mi",correcta:{t:"paraguas"},falsas:[{t:"pijama"},{t:"almohada"}],leer:"Cuando llueve uso mi paraguas"},
-    {antes:"En la escuela aprendo a leer y a",correcta:{t:"escribir"},falsas:[{t:"volar"},{t:"ladrar"}],leer:"En la escuela aprendo a leer y a escribir"},
-    {antes:"Las plantas necesitan agua y",correcta:{t:"sol"},falsas:[{t:"sal"},{t:"tele"}],leer:"Las plantas necesitan agua y sol"},
-    {antes:"Antes de comer me lavo las",correcta:{t:"manos"},falsas:[{t:"medias"},{t:"llaves"}],leer:"Antes de comer me lavo las manos"}
-  ]
+  1:[{antes:"El gato toma",correcta:{t:"leche"},falsas:[{t:"piedras"},{t:"zapatos"}],leer:"El gato toma leche"},{antes:"El pez nada en el",correcta:{t:"agua"},falsas:[{t:"fuego"},{t:"cielo"}],leer:"El pez nada en el agua"},{antes:"Yo duermo en mi",correcta:{t:"cama"},falsas:[{t:"mesa"},{t:"auto"}],leer:"Yo duermo en mi cama"},{antes:"El perro dice",correcta:{t:"guau"},falsas:[{t:"miau"},{t:"cuac"}],leer:"El perro dice guau"},{antes:"El sol es de color",correcta:{t:"amarillo"},falsas:[{t:"verde"},{t:"azul"}],leer:"El sol es de color amarillo"}],
+  2:[{antes:"La banana es una",correcta:{t:"fruta"},falsas:[{t:"flor"},{t:"casa"}],leer:"La banana es una fruta"},{antes:"En invierno hace mucho",correcta:{t:"frío"},falsas:[{t:"calor"},{t:"ruido"}],leer:"En invierno hace mucho frío"},{antes:"Los pájaros vuelan por el",correcta:{t:"cielo"},falsas:[{t:"mar"},{t:"piso"}],leer:"Los pájaros vuelan por el cielo"},{antes:"Me lavo los dientes con el",correcta:{t:"cepillo"},falsas:[{t:"tenedor"},{t:"martillo"}],leer:"Me lavo los dientes con el cepillo"},{antes:"La abeja hace rica",correcta:{t:"miel"},falsas:[{t:"sopa"},{t:"pizza"}],leer:"La abeja hace rica miel"}],
+  3:[{antes:"Antes de cruzar la calle miro para los dos",correcta:{t:"lados"},falsas:[{t:"dedos"},{t:"gatos"}],leer:"Antes de cruzar la calle miro para los dos lados"},{antes:"Cuando llueve uso mi",correcta:{t:"paraguas"},falsas:[{t:"pijama"},{t:"almohada"}],leer:"Cuando llueve uso mi paraguas"},{antes:"En la escuela aprendo a leer y a",correcta:{t:"escribir"},falsas:[{t:"volar"},{t:"ladrar"}],leer:"En la escuela aprendo a leer y a escribir"},{antes:"Las plantas necesitan agua y",correcta:{t:"sol"},falsas:[{t:"sal"},{t:"tele"}],leer:"Las plantas necesitan agua y sol"},{antes:"Antes de comer me lavo las",correcta:{t:"manos"},falsas:[{t:"medias"},{t:"llaves"}],leer:"Antes de comer me lavo las manos"}]
 };
-
-/* SOPA — todas palabras reales en español */
 const SOPAS = {
-  1:[
-    {palabras:["SOL","MAR","PEZ","OJO","RIO"]},
-    {palabras:["PAN","MAR","OSO","UVA","SED"]},
-    {palabras:["SOL","PAN","RED","GEL","MAS"]}
-  ],
-  2:[
-    {palabras:["GATO","LUNA","PATO","MESA"]},
-    {palabras:["CASA","SAPO","VACA","MONO"]},
-    {palabras:["PERA","MANO","SOPA","TREN"]}
-  ],
-  3:[
-    {palabras:["PERRO","QUESO","LECHE"]},
-    {palabras:["LIBRO","NOCHE","CIELO"]},
-    {palabras:["TRUFA","MADRE","BARRO"]}
-  ]
+  1:[{palabras:["SOL","MAR","PEZ","OJO","RIO"]},{palabras:["PAN","OSO","UVA","SED","MAR"]},{palabras:["SOL","PAN","RED","MAR","OJO"]}],
+  2:[{palabras:["GATO","LUNA","PATO","MESA"]},{palabras:["CASA","SAPO","VACA","MONO"]},{palabras:["PERA","MANO","SOPA","TREN"]}],
+  3:[{palabras:["PERRO","QUESO","LECHE"]},{palabras:["LIBRO","NOCHE","CIELO"]},{palabras:["MADRE","BARRO","TARDE"]}]
 };
 
-const META=5, NIVEL_MAX_SIL=5, NIVEL_MAX_PAL=3, NIVEL_MAX_FRA=3, NIVEL_MAX_SOPA=3;
-const TAMANIO=5;
+/* ===== ESTADO ===== */
+const META=5, NIVEL_MAX_SIL=5, NIVEL_MAX_PAL=3, NIVEL_MAX_FRA=3, NIVEL_MAX_SOPA=3, TAMANIO=5;
 const DIRS=[[0,1],[1,0],[1,1],[-1,1],[0,-1],[-1,0],[-1,-1],[1,-1]];
-
 let prog={stars:0,sil:{n:1,a:0},pal:{n:1,a:0},fra:{n:1,a:0},sopa:{n:1,a:0}};
 let silActual,palActual,fraActual,silProgreso=0;
-let sopaData=[],sopaSeleccion=[],sopaEncontradas=[],sopaPalabrasAct=[];
+let sopaData=[],sopaEncontradas=[],sopaPalabrasAct=[];
+let sopaArrastre={activo:false,inicio:null,actual:[]};
 
+/* ===== AUDIO ===== */
+let audioDesbloqueado=false;
+function arrancar(){
+  // Desbloquea el audio con un toque del usuario
+  if(window.speechSynthesis){
+    const u=new SpeechSynthesisUtterance('');
+    speechSynthesis.speak(u);
+    speechSynthesis.cancel();
+  }
+  audioDesbloqueado=true;
+  document.getElementById('bienvenida').style.display='none';
+  document.getElementById('app').style.display='block';
+  cargarProgreso();
+  setTimeout(()=>decir('¡Hola Jazmín! ¿A qué jugamos hoy?'),300);
+}
+function decir(texto){
+  if(!window.speechSynthesis||!audioDesbloqueado)return;
+  speechSynthesis.cancel();
+  setTimeout(()=>{
+    const u=new SpeechSynthesisUtterance(texto);
+    u.lang='es-ES';u.rate=0.78;u.pitch=1.1;
+    const voces=speechSynthesis.getVoices();
+    const v=voces.find(v=>v.lang.startsWith('es')&&v.name.includes('female'))||voces.find(v=>v.lang.startsWith('es'));
+    if(v)u.voice=v;
+    speechSynthesis.speak(u);
+  },50);
+}
+if(window.speechSynthesis){speechSynthesis.getVoices();window.speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();}
+
+/* ===== PROGRESO ===== */
 function cargarProgreso(){
-  try{const g=localStorage.getItem('jazmin_v3');if(g)prog=JSON.parse(g);}catch(e){}
+  try{const g=localStorage.getItem('jazmin_v4');if(g)prog=JSON.parse(g);}catch(e){}
   pintarMenu();
 }
 function guardarProgreso(){
-  try{localStorage.setItem('jazmin_v3',JSON.stringify(prog));}catch(e){}
+  try{localStorage.setItem('jazmin_v4',JSON.stringify(prog));}catch(e){}
   pintarMenu();
 }
 function borrarProgreso(){
@@ -338,55 +271,44 @@ function borrarProgreso(){
 function pintarMenu(){
   document.getElementById('stars').textContent=prog.stars;
   [['sil',NIVEL_MAX_SIL],['pal',NIVEL_MAX_PAL],['fra',NIVEL_MAX_FRA],['sopa',NIVEL_MAX_SOPA]].forEach(([k,max])=>{
-    const p=prog[k];
-    const ok=p.n>=max&&p.a>=META;
+    const p=prog[k],ok=p.n>=max&&p.a>=META;
     document.getElementById('menu-'+k).textContent=ok?'¡Nivel '+max+' completado! 🏆':'Nivel '+p.n+' · '+p.a+' de '+META+' ⭐';
     document.getElementById('barra-'+k).style.width=Math.min(100,(p.a/META)*100)+'%';
   });
 }
 
+/* ===== UTILIDADES ===== */
 function mezclar(a){return [...a].sort(()=>Math.random()-0.5);}
 function alAzar(lista){return lista[Math.floor(Math.random()*lista.length)];}
-function irA(id){document.querySelectorAll('.pantalla').forEach(p=>p.classList.remove('activa'));document.getElementById(id).classList.add('activa');window.speechSynthesis&&speechSynthesis.cancel();}
-
+function irA(id){document.querySelectorAll('.pantalla').forEach(p=>p.classList.remove('activa'));document.getElementById(id).classList.add('activa');speechSynthesis.cancel();}
 function acierto(juego){
   prog.stars++;
-  const p=prog[juego];
-  const max=juego==='sil'?NIVEL_MAX_SIL:juego==='sopa'?NIVEL_MAX_SOPA:3;
+  const p=prog[juego],max=juego==='sil'?NIVEL_MAX_SIL:juego==='sopa'?NIVEL_MAX_SOPA:3;
   if(p.n<max||p.a<META)p.a++;
   confeti();
-  if(p.a>=META&&p.n<max){p.n++;p.a=0;guardarProgreso();setTimeout(()=>mostrarSubida(p.n),1200);}
+  if(p.a>=META&&p.n<max){p.n++;p.a=0;guardarProgreso();setTimeout(()=>mostrarSubida(p.n),1400);}
   else guardarProgreso();
 }
 function mostrarSubida(n){
   document.getElementById('sn-texto').textContent='¡Ahora estás en el Nivel '+n+'! ¡Cada vez sos más grande!';
   document.getElementById('subir-nivel').classList.add('ver');
-  decir('¡Felicitaciones! ¡Subiste al nivel '+n+'!');
-  confeti();setTimeout(confeti,600);
+  decir('¡Felicitaciones Jazmín! ¡Subiste al nivel '+n+'!');
+  confeti();setTimeout(confeti,700);
 }
 function cerrarNivel(){
   document.getElementById('subir-nivel').classList.remove('ver');
   const a=document.querySelector('.pantalla.activa').id;
-  if(a==='silabas')cargarSilaba();
-  if(a==='palabras')cargarPalabra();
-  if(a==='frases')cargarFrase();
-  if(a==='sopa-pantalla')cargarSopa();
+  if(a==='silabas')cargarSilaba();if(a==='palabras')cargarPalabra();
+  if(a==='frases')cargarFrase();if(a==='sopa-pantalla')cargarSopa();
 }
 function confeti(){
   const c=["🎉","⭐","✨","🌟","🎊"];
-  for(let i=0;i<12;i++){
+  for(let i=0;i<14;i++){
     const el=document.createElement('div');el.className='confeti';el.textContent=alAzar(c);
-    el.style.left=Math.random()*95+'vw';el.style.animationDelay=(Math.random()*0.5)+'s';
+    el.style.left=Math.random()*95+'vw';el.style.animationDelay=(Math.random()*0.6)+'s';
     document.body.appendChild(el);setTimeout(()=>el.remove(),2800);
   }
 }
-function decir(texto){
-  if(!window.speechSynthesis)return;speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(texto);u.lang='es-ES';u.rate=0.75;
-  const v=speechSynthesis.getVoices().find(v=>v.lang.startsWith('es'));if(v)u.voice=v;
-  speechSynthesis.speak(u);
-}
-if(window.speechSynthesis)speechSynthesis.getVoices();
 function empezar(j){
   if(j==='sil'){cargarSilaba();irA('silabas');}
   if(j==='pal'){cargarPalabra();irA('palabras');}
@@ -394,14 +316,13 @@ function empezar(j){
   if(j==='sopa'){cargarSopa();irA('sopa-pantalla');}
 }
 
-/* SÍLABAS */
+/* ===== SÍLABAS ===== */
 function cargarSilaba(){
   silActual=alAzar(SILABAS[prog.sil.n]);silProgreso=0;
   document.getElementById('sil-nivel').textContent='Nivel '+prog.sil.n+' de '+NIVEL_MAX_SIL;
   document.getElementById('sil-dibujo').textContent=silActual.emoji;
   document.getElementById('sil-zona').innerHTML='&nbsp;';
-  document.getElementById('sil-cele').classList.remove('ver');
-  document.getElementById('sil-next').classList.remove('ver');
+  ['sil-cele','sil-next'].forEach(id=>document.getElementById(id).classList.remove('ver'));
   const cont=document.getElementById('sil-fichas');cont.innerHTML='';
   mezclar(silActual.partes.map((s,i)=>({s,i}))).forEach(obj=>{
     const b=document.createElement('button');b.className='silaba';b.textContent=obj.s;
@@ -415,17 +336,24 @@ function tocarSilaba(btn,orden){
     document.getElementById('sil-zona').textContent=silActual.partes.slice(0,silProgreso).join('');
     decir(silActual.partes[orden].toLowerCase());
     if(silProgreso===silActual.partes.length){
-      setTimeout(()=>{decir("¡Correcto! Armaste la palabra: "+silActual.palabra+". ¡Muy bien Jazmín!");document.getElementById('sil-cele').classList.add('ver');document.getElementById('sil-next').classList.add('ver');acierto('sil');},600);
+      setTimeout(()=>{
+        decir('¡Correcto! Armaste la palabra '+silActual.palabra+'. ¡Muy bien Jazmín!');
+        document.getElementById('sil-cele').classList.add('ver');
+        document.getElementById('sil-next').classList.add('ver');
+        acierto('sil');
+      },500);
     }
-  } else {btn.classList.add('mal');setTimeout(()=>btn.classList.remove('mal'),450);}
+  } else {
+    btn.classList.add('mal');decir('Esa no es, intentá de nuevo');setTimeout(()=>btn.classList.remove('mal'),450);
+  }
 }
 
-/* PALABRAS */
+/* ===== PALABRAS ===== */
 function cargarPalabra(){
   palActual=alAzar(PALABRAS[prog.pal.n]);
   document.getElementById('pal-nivel').textContent='Nivel '+prog.pal.n+' de '+NIVEL_MAX_PAL;
   document.getElementById('pal-dibujo').textContent=palActual.emoji;
-  document.getElementById('pal-cele').classList.remove('ver');document.getElementById('pal-next').classList.remove('ver');
+  ['pal-cele','pal-next'].forEach(id=>document.getElementById(id).classList.remove('ver'));
   const cont=document.getElementById('pal-opciones');cont.innerHTML='';
   mezclar([palActual.palabra,...palActual.falsas]).forEach(op=>{
     const b=document.createElement('button');b.className='opcion';b.textContent=op;
@@ -434,16 +362,19 @@ function cargarPalabra(){
   decir(palActual.palabra);
 }
 function elegirPalabra(btn,op){
-  if(op===palActual.palabra){btn.classList.add('bien');decir("¡Excelente! "+palActual.palabra);document.getElementById('pal-cele').classList.add('ver');document.getElementById('pal-next').classList.add('ver');document.querySelectorAll('#pal-opciones .opcion').forEach(o=>o.style.pointerEvents='none');acierto('pal');}
-  else{btn.classList.add('mal');decir("Probá otra vez");setTimeout(()=>btn.classList.remove('mal'),450);}
+  if(op===palActual.palabra){
+    btn.classList.add('bien');decir('¡Correcto! La palabra es '+palActual.palabra);
+    ['pal-cele','pal-next'].forEach(id=>document.getElementById(id).classList.add('ver'));
+    document.querySelectorAll('#pal-opciones .opcion').forEach(o=>o.style.pointerEvents='none');acierto('pal');
+  } else {btn.classList.add('mal');decir('No es esa, probá otra vez');setTimeout(()=>btn.classList.remove('mal'),450);}
 }
 
-/* FRASES */
+/* ===== FRASES ===== */
 function cargarFrase(){
   fraActual=alAzar(FRASES[prog.fra.n]);
   document.getElementById('fra-nivel').textContent='Nivel '+prog.fra.n+' de '+NIVEL_MAX_FRA;
   document.getElementById('fra-texto').innerHTML=fraActual.antes+' <span class="hueco" id="fra-hueco">&nbsp;</span>';
-  document.getElementById('fra-cele').classList.remove('ver');document.getElementById('fra-next').classList.remove('ver');
+  ['fra-cele','fra-next'].forEach(id=>document.getElementById(id).classList.remove('ver'));
   const cont=document.getElementById('fra-opciones');cont.innerHTML='';
   mezclar([{...fraActual.correcta,ok:true},...fraActual.falsas.map(f=>({...f,ok:false}))]).forEach(op=>{
     const b=document.createElement('button');b.className='opcion';b.textContent=op.t;
@@ -451,78 +382,157 @@ function cargarFrase(){
   });
   decirFrase();
 }
-function decirFrase(){decir(fraActual.antes+" ...");}
+function decirFrase(){decir(fraActual.antes+' ...');}
 function elegirFrase(btn,op){
-  if(op.ok){btn.classList.add('bien');document.getElementById('fra-hueco').textContent=op.t;decir("¡Genial! "+fraActual.leer);document.getElementById('fra-cele').classList.add('ver');document.getElementById('fra-next').classList.add('ver');document.querySelectorAll('#fra-opciones .opcion').forEach(o=>o.style.pointerEvents='none');acierto('fra');}
-  else{btn.classList.add('mal');decir("Probá otra vez");setTimeout(()=>btn.classList.remove('mal'),450);}
+  if(op.ok){
+    btn.classList.add('bien');document.getElementById('fra-hueco').textContent=op.t;
+    decir('¡Correcto! '+fraActual.leer);
+    ['fra-cele','fra-next'].forEach(id=>document.getElementById(id).classList.add('ver'));
+    document.querySelectorAll('#fra-opciones .opcion').forEach(o=>o.style.pointerEvents='none');acierto('fra');
+  } else {btn.classList.add('mal');decir('No es esa, leé bien la frase');setTimeout(()=>btn.classList.remove('mal'),450);}
 }
 
-/* SOPA */
+/* ===== SOPA — selección por arrastre en línea recta ===== */
 function cargarSopa(){
   const set=alAzar(SOPAS[prog.sopa.n]);
   sopaPalabrasAct=[...set.palabras];sopaEncontradas=[];
   document.getElementById('sopa-nivel').textContent='Nivel '+prog.sopa.n+' de '+NIVEL_MAX_SOPA;
-  document.getElementById('sopa-cele').classList.remove('ver');document.getElementById('sopa-next').classList.remove('ver');
-  document.getElementById('sopa-enc').textContent='0';document.getElementById('sopa-total').textContent=sopaPalabrasAct.length;
+  ['sopa-cele','sopa-next'].forEach(id=>document.getElementById(id).classList.remove('ver'));
+  document.getElementById('sopa-enc').textContent='0';
+  document.getElementById('sopa-total').textContent=sopaPalabrasAct.length;
   generarSopa();renderChips();
 }
+
 function generarSopa(){
   sopaData=Array.from({length:TAMANIO},()=>Array(TAMANIO).fill(''));
   for(const pal of sopaPalabrasAct){
     let ok=false;
-    for(let t=0;t<300&&!ok;t++){
+    for(let t=0;t<400&&!ok;t++){
       const [dr,dc]=DIRS[Math.floor(Math.random()*DIRS.length)];
       const r=Math.floor(Math.random()*TAMANIO),c=Math.floor(Math.random()*TAMANIO);
-      if(cabe(pal,r,c,dr,dc)){for(let i=0;i<pal.length;i++)sopaData[r+dr*i][c+dc*i]=pal[i];ok=true;}
+      if(cabe(pal,r,c,dr,dc)){
+        for(let i=0;i<pal.length;i++)sopaData[r+dr*i][c+dc*i]=pal[i];
+        ok=true;
+      }
     }
   }
   const L='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  for(let r=0;r<TAMANIO;r++)for(let c=0;c<TAMANIO;c++)if(!sopaData[r][c])sopaData[r][c]=L[Math.floor(Math.random()*L.length)];
+  for(let r=0;r<TAMANIO;r++)for(let c=0;c<TAMANIO;c++)
+    if(!sopaData[r][c])sopaData[r][c]=L[Math.floor(Math.random()*L.length)];
   renderGrilla();
 }
+
 function cabe(pal,r,c,dr,dc){
-  for(let i=0;i<pal.length;i++){const nr=r+dr*i,nc=c+dc*i;if(nr<0||nr>=TAMANIO||nc<0||nc>=TAMANIO)return false;if(sopaData[nr][nc]&&sopaData[nr][nc]!==pal[i])return false;}return true;
+  for(let i=0;i<pal.length;i++){
+    const nr=r+dr*i,nc=c+dc*i;
+    if(nr<0||nr>=TAMANIO||nc<0||nc>=TAMANIO)return false;
+    if(sopaData[nr][nc]&&sopaData[nr][nc]!==pal[i])return false;
+  }
+  return true;
 }
+
+function celda(r,c){return document.querySelector(`.sopa-celda[data-r="${r}"][data-c="${c}"]`);}
+
 function renderGrilla(){
   const grid=document.getElementById('sopa-grid');
-  grid.style.gridTemplateColumns=`repeat(${TAMANIO},1fr)`;grid.innerHTML='';sopaSeleccion=[];
+  grid.style.gridTemplateColumns=`repeat(${TAMANIO},1fr)`;
+  grid.innerHTML='';
+  sopaArrastre={activo:false,inicio:null,actual:[]};
+
   for(let r=0;r<TAMANIO;r++)for(let c=0;c<TAMANIO;c++){
-    const cel=document.createElement('div');cel.className='sopa-celda';cel.textContent=sopaData[r][c];
-    cel.dataset.r=r;cel.dataset.c=c;cel.onclick=()=>tocarCelda(cel,r,c);grid.appendChild(cel);
+    const cel=document.createElement('div');
+    cel.className='sopa-celda';cel.textContent=sopaData[r][c];
+    cel.dataset.r=r;cel.dataset.c=c;
+    // Touch
+    cel.addEventListener('touchstart',e=>{e.preventDefault();iniciarArrastre(r,c);},{passive:false});
+    cel.addEventListener('touchmove',e=>{
+      e.preventDefault();
+      const t=e.touches[0];
+      const el=document.elementFromPoint(t.clientX,t.clientY);
+      if(el&&el.classList.contains('sopa-celda'))moverArrastre(+el.dataset.r,+el.dataset.c);
+    },{passive:false});
+    cel.addEventListener('touchend',e=>{e.preventDefault();terminarArrastre();},{passive:false});
+    // Mouse
+    cel.addEventListener('mousedown',()=>iniciarArrastre(r,c));
+    cel.addEventListener('mouseenter',()=>{if(sopaArrastre.activo)moverArrastre(r,c);});
+    grid.appendChild(cel);
   }
+  document.addEventListener('mouseup',terminarArrastre,{once:false});
 }
+
+function iniciarArrastre(r,c){
+  if(celda(r,c).classList.contains('encontrada-ok'))return;
+  sopaArrastre={activo:true,inicio:{r,c},actual:[{r,c}],dr:null,dc:null};
+  limpiarSeleccion();
+  celda(r,c).classList.add('seleccionada');
+}
+
+function moverArrastre(r,c){
+  if(!sopaArrastre.activo)return;
+  if(celda(r,c).classList.contains('encontrada-ok'))return;
+  const {inicio}=sopaArrastre;
+  const dr=r-inicio.r, dc=c-inicio.c;
+  // Verificar dirección válida (línea recta)
+  const esDir=DIRS.some(([ddr,ddc])=>{
+    if(dr===0&&dc===0)return true;
+    if(ddr===0&&ddc===0)return false;
+    if(dr===0)return ddr===0;
+    if(dc===0)return ddc===0;
+    if(Math.abs(dr)!==Math.abs(dc))return false;
+    return (ddr===0||Math.sign(dr)===ddr)&&(ddc===0||Math.sign(dc)===ddc);
+  });
+  if(!esDir)return;
+  // Calcular celdas en línea recta hasta r,c
+  const len=Math.max(Math.abs(dr),Math.abs(dc));
+  const stepR=dr===0?0:Math.sign(dr), stepC=dc===0?0:Math.sign(dc);
+  const nuevas=[];
+  for(let i=0;i<=len;i++)nuevas.push({r:inicio.r+stepR*i,c:inicio.c+stepC*i});
+  sopaArrastre.actual=nuevas;
+  limpiarSeleccion();
+  nuevas.forEach(({r:nr,c:nc})=>{
+    const cel=celda(nr,nc);if(cel&&!cel.classList.contains('encontrada-ok'))cel.classList.add('seleccionada');
+  });
+}
+
+function terminarArrastre(){
+  if(!sopaArrastre.activo)return;
+  sopaArrastre.activo=false;
+  const texto=sopaArrastre.actual.map(({r,c})=>sopaData[r][c]).join('');
+  const rev=[...texto].reverse().join('');
+  const match=sopaPalabrasAct.find(p=>!sopaEncontradas.includes(p)&&(p===texto||p===rev));
+  if(match){
+    sopaEncontradas.push(match);
+    sopaArrastre.actual.forEach(({r,c})=>{const cel=celda(r,c);if(cel){cel.classList.remove('seleccionada');cel.classList.add('encontrada-ok');}});
+    document.getElementById('sopa-enc').textContent=sopaEncontradas.length;
+    document.getElementById('chip-'+match).classList.add('encontrada');
+    decir('¡Correcto! Encontraste '+match.toLowerCase());
+    if(sopaEncontradas.length===sopaPalabrasAct.length){
+      setTimeout(()=>{
+        decir('¡Felicitaciones Jazmín! ¡Encontraste todas las palabras!');
+        document.getElementById('sopa-cele').classList.add('ver');
+        document.getElementById('sopa-next').classList.add('ver');
+        acierto('sopa');
+      },600);
+    }
+  } else {
+    sopaArrastre.actual.forEach(({r,c})=>{
+      const cel=celda(r,c);if(cel){cel.classList.remove('seleccionada');cel.classList.add('error-sel');setTimeout(()=>cel.classList.remove('error-sel'),500);}
+    });
+  }
+  sopaArrastre.actual=[];
+}
+
+function limpiarSeleccion(){
+  document.querySelectorAll('.sopa-celda.seleccionada').forEach(c=>c.classList.remove('seleccionada'));
+}
+
 function renderChips(){
   const cont=document.getElementById('sopa-chips');cont.innerHTML='';
   sopaPalabrasAct.forEach(p=>{
-    const ch=document.createElement('div');ch.className='palabra-chip'+(sopaEncontradas.includes(p)?' encontrada':'');
-    ch.id='chip-'+p;ch.textContent=p;cont.appendChild(ch);
+    const ch=document.createElement('div');
+    ch.className='palabra-chip';ch.id='chip-'+p;ch.textContent=p;cont.appendChild(ch);
   });
 }
-function tocarCelda(cel,r,c){
-  if(cel.classList.contains('encontrada-ok'))return;
-  const key=r+'-'+c;
-  const ya=sopaSeleccion.findIndex(s=>s.key===key);
-  if(ya>=0){sopaSeleccion.splice(ya,1);cel.classList.remove('seleccionada');return;}
-  sopaSeleccion.push({key,r,c,cel});cel.classList.add('seleccionada');
-  const texto=sopaSeleccion.map(s=>sopaData[s.r][s.c]).join('');
-  const rev=[...texto].reverse().join('');
-  const match=sopaPalabrasAct.find(p=>p===texto||p===rev);
-  if(match&&!sopaEncontradas.includes(match)){
-    sopaEncontradas.push(match);
-    sopaSeleccion.forEach(s=>{s.cel.classList.remove('seleccionada');s.cel.classList.add('encontrada-ok');});
-    sopaSeleccion=[];
-    document.getElementById('sopa-enc').textContent=sopaEncontradas.length;
-    document.getElementById('chip-'+match).classList.add('encontrada');
-    decir("¡Encontraste "+match.toLowerCase()+"!");
-    if(sopaEncontradas.length===sopaPalabrasAct.length){
-      setTimeout(()=>{document.getElementById('sopa-cele').classList.add('ver');document.getElementById('sopa-next').classList.add('ver');acierto('sopa');},600);
-    }
-  } else if(texto.length>Math.max(...sopaPalabrasAct.map(p=>p.length))){
-    sopaSeleccion.forEach(s=>{s.cel.classList.remove('seleccionada');s.cel.classList.add('error-sel');setTimeout(()=>s.cel.classList.remove('error-sel'),500);});
-    sopaSeleccion=[];
-  }
-}
-cargarProgreso();
 </script>
 </body>
 </html>
