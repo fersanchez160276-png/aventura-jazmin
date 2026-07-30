@@ -12,93 +12,80 @@
   .pantalla.activa { display: block; }
 
   .topbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 8px; max-width: 700px; margin: 0 auto; }
-  .btn-casa { font-size: 2rem; background: #fff; border: 3px solid #F0B429; border-radius: 50%; width: 58px; height: 58px; cursor: pointer; }
-  .estrellas { background: #fff; border: 3px solid #F0B429; border-radius: 30px; padding: 8px 18px; font-size: 1.5rem; font-weight: bold; color: #B8860B; }
+  .btn-casa { font-size: 2rem; background: #fff; border: 3px solid #F0B429; border-radius: 50%; width: 62px; height: 62px; cursor: pointer; }
+  .estrellas { background: #fff; border: 3px solid #F0B429; border-radius: 30px; padding: 10px 20px; font-size: 1.6rem; font-weight: bold; color: #B8860B; }
 
-  h1 { font-size: 2rem; color: #7B4EA8; margin: 10px 0 4px; }
-  .subtitulo { font-size: 1.1rem; color: #9C7A5B; margin-bottom: 20px; }
-  .mascota { font-size: 5rem; animation: flotar 2.5s ease-in-out infinite; display: inline-block; }
+  h1 { font-size: 2.2rem; color: #7B4EA8; margin: 10px 0 4px; }
+  .subtitulo { font-size: 1.2rem; color: #9C7A5B; margin-bottom: 20px; }
+  .mascota { font-size: 6rem; animation: flotar 2.5s ease-in-out infinite; display: inline-block; }
   @keyframes flotar { 0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)} }
 
-  .menu-juegos { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
-  .btn-juego { display: flex; align-items: center; gap: 16px; background: #fff; border: 4px solid; border-radius: 24px; padding: 16px 20px; cursor: pointer; font-family: inherit; text-align: left; transition: transform 0.15s; box-shadow: 0 5px 0 rgba(0,0,0,0.08); }
+  .menu-juegos { display: flex; flex-direction: column; gap: 18px; margin-top: 16px; }
+  .btn-juego { display: flex; align-items: center; gap: 16px; background: #fff; border: 4px solid; border-radius: 24px; padding: 20px 22px; cursor: pointer; font-family: inherit; text-align: left; transition: transform 0.15s; box-shadow: 0 5px 0 rgba(0,0,0,0.08); }
   .btn-juego:active { transform: scale(0.97); }
-  .btn-juego .icono { font-size: 3rem; }
+  .btn-juego .icono { font-size: 3.2rem; }
   .btn-juego .info { flex: 1; }
-  .btn-juego .nombre { font-size: 1.25rem; font-weight: bold; display: block; }
-  .btn-juego .nivel-info { font-size: 0.9rem; color: #9C7A5B; display: block; margin-top: 2px; }
-  .mini-barra { background: #EFE6D5; border-radius: 10px; height: 10px; margin-top: 6px; overflow: hidden; }
-  .mini-fill { height: 10px; border-radius: 10px; transition: width 0.5s; }
+  .btn-juego .nombre { font-size: 1.4rem; font-weight: bold; display: block; }
+  .btn-juego .nivel-info { font-size: 1rem; color: #9C7A5B; display: block; margin-top: 3px; }
+  .mini-barra { background: #EFE6D5; border-radius: 10px; height: 12px; margin-top: 8px; overflow: hidden; }
+  .mini-fill { height: 12px; border-radius: 10px; transition: width 0.5s; }
 
-  .nivel-badge { display: inline-block; background: #7B4EA8; color: #fff; font-size: 1rem; font-weight: bold; border-radius: 30px; padding: 6px 18px; margin-bottom: 8px; }
-  .instruccion { font-size: 1.4rem; font-weight: bold; margin: 10px 0 6px; color: #5B4636; }
-  .btn-oir { font-size: 1.2rem; background: #7B4EA8; color: #fff; border: none; border-radius: 40px; padding: 14px 28px; cursor: pointer; font-family: inherit; font-weight: bold; margin: 8px 0 16px; box-shadow: 0 4px 0 #5A3580; }
+  .nivel-badge { display: inline-block; background: #7B4EA8; color: #fff; font-size: 1.1rem; font-weight: bold; border-radius: 30px; padding: 8px 22px; margin-bottom: 10px; }
+  .instruccion { font-size: 1.5rem; font-weight: bold; margin: 10px 0 8px; color: #5B4636; }
+  .btn-oir { font-size: 1.3rem; background: #7B4EA8; color: #fff; border: none; border-radius: 40px; padding: 16px 32px; cursor: pointer; font-family: inherit; font-weight: bold; margin: 8px 0 18px; box-shadow: 0 4px 0 #5A3580; }
   .btn-oir:active { transform: translateY(3px); box-shadow: 0 1px 0 #5A3580; }
-  .dibujo-grande { font-size: 7rem; margin: 4px 0; }
+  .dibujo-grande { font-size: 8rem; margin: 4px 0; }
 
-  .opciones { display: flex; flex-direction: column; gap: 14px; margin-top: 10px; }
+  .opciones { display: flex; flex-direction: column; gap: 16px; margin-top: 12px; }
   .opciones.fila { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-  .opcion { background: #fff; border: 4px solid #C9E4CA; border-radius: 20px; padding: 18px 24px; font-size: 2rem; font-weight: bold; letter-spacing: 3px; cursor: pointer; font-family: inherit; color: #4A3728; box-shadow: 0 5px 0 rgba(0,0,0,0.08); transition: transform 0.15s; min-width: 130px; }
+  .opcion { background: #fff; border: 4px solid #C9E4CA; border-radius: 20px; padding: 20px 26px; font-size: 2.2rem; font-weight: bold; letter-spacing: 3px; cursor: pointer; font-family: inherit; color: #4A3728; box-shadow: 0 5px 0 rgba(0,0,0,0.08); transition: transform 0.15s; min-width: 140px; }
   .opcion:active { transform: scale(0.96); }
   .opcion.bien { background: #C9F2C7; border-color: #4CAF50; animation: saltar 0.5s; }
   .opcion.mal { background: #FFD6D6; border-color: #E57373; animation: temblar 0.4s; }
   @keyframes saltar { 30%{transform:scale(1.15)} }
   @keyframes temblar { 25%{transform:translateX(-8px)} 75%{transform:translateX(8px)} }
 
-  .zona-armado { min-height: 90px; background: #fff; border: 4px dashed #F0B429; border-radius: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 2.6rem; font-weight: bold; letter-spacing: 4px; color: #7B4EA8; margin: 12px auto; max-width: 420px; padding: 10px; }
-  .silabas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
-  .silaba { background: #FFE9A8; border: 4px solid #F0B429; border-radius: 18px; font-size: 2.2rem; font-weight: bold; padding: 14px 22px; cursor: pointer; font-family: inherit; color: #7A5C00; box-shadow: 0 5px 0 #D9A420; transition: transform 0.15s; }
+  .zona-armado { min-height: 100px; background: #fff; border: 4px dashed #F0B429; border-radius: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 2.8rem; font-weight: bold; letter-spacing: 4px; color: #7B4EA8; margin: 14px auto; max-width: 440px; padding: 12px; }
+  .silabas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+  .silaba { background: #FFE9A8; border: 4px solid #F0B429; border-radius: 18px; font-size: 2.4rem; font-weight: bold; padding: 16px 24px; cursor: pointer; font-family: inherit; color: #7A5C00; box-shadow: 0 5px 0 #D9A420; transition: transform 0.15s; }
   .silaba:active { transform: scale(0.94); }
   .silaba.usada { opacity: 0.25; pointer-events: none; }
 
-  .celebracion { display: none; font-size: 1.6rem; font-weight: bold; color: #4CAF50; margin-top: 16px; animation: aparecer 0.4s; }
+  .celebracion { display: none; font-size: 1.8rem; font-weight: bold; color: #4CAF50; margin-top: 18px; animation: aparecer 0.4s; }
   .celebracion.ver { display: block; }
   @keyframes aparecer { from{transform:scale(0.5);opacity:0} to{transform:scale(1);opacity:1} }
 
-  .btn-siguiente { display: none; font-size: 1.3rem; background: #4CAF50; color: #fff; border: none; border-radius: 40px; padding: 16px 36px; cursor: pointer; font-family: inherit; font-weight: bold; margin-top: 12px; box-shadow: 0 4px 0 #2E7D32; }
+  .btn-siguiente { display: none; font-size: 1.4rem; background: #4CAF50; color: #fff; border: none; border-radius: 40px; padding: 18px 40px; cursor: pointer; font-family: inherit; font-weight: bold; margin-top: 14px; box-shadow: 0 4px 0 #2E7D32; }
   .btn-siguiente.ver { display: inline-block; }
   .btn-siguiente:active { transform: translateY(3px); box-shadow: 0 1px 0 #2E7D32; }
 
-  .confeti { position: fixed; top: -20px; font-size: 1.8rem; animation: caer 2.2s linear forwards; pointer-events: none; z-index: 99; }
+  .confeti { position: fixed; top: -20px; font-size: 2rem; animation: caer 2.2s linear forwards; pointer-events: none; z-index: 99; }
   @keyframes caer { to{transform:translateY(110vh) rotate(360deg)} }
 
-  .frase { font-size: 2rem; font-weight: bold; line-height: 1.8; letter-spacing: 2px; margin: 14px 0; }
-  .hueco { display: inline-block; min-width: 110px; border-bottom: 5px dashed #F0B429; color: #7B4EA8; }
+  .frase { font-size: 2.1rem; font-weight: bold; line-height: 1.8; letter-spacing: 2px; margin: 14px 0; }
+  .hueco { display: inline-block; min-width: 120px; border-bottom: 5px dashed #F0B429; color: #7B4EA8; }
 
   /* SOPA DE LETRAS */
-  #sopa-pantalla .instruccion { font-size: 1.1rem; }
-  .palabras-buscar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 10px 0 16px; }
-  .palabra-chip { background: #FFE9A8; border: 3px solid #F0B429; border-radius: 20px; padding: 8px 16px; font-size: 1.2rem; font-weight: bold; color: #7A5C00; transition: all 0.3s; }
+  .palabras-buscar { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 12px 0 18px; }
+  .palabra-chip { background: #FFE9A8; border: 3px solid #F0B429; border-radius: 20px; padding: 10px 18px; font-size: 1.4rem; font-weight: bold; color: #7A5C00; transition: all 0.3s; }
   .palabra-chip.encontrada { background: #C9F2C7; border-color: #4CAF50; text-decoration: line-through; color: #2E7D32; }
 
-  .sopa-grid { display: inline-grid; gap: 4px; margin: 0 auto 16px; }
-  .sopa-celda { width: 52px; height: 52px; background: #fff; border: 3px solid #E8D8B0; border-radius: 12px; font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #4A3728; transition: all 0.15s; font-family: inherit; }
+  .sopa-grid { display: inline-grid; gap: 6px; margin: 0 auto 18px; }
+  .sopa-celda { width: 64px; height: 64px; background: #fff; border: 3px solid #E8D8B0; border-radius: 14px; font-size: 1.8rem; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #4A3728; transition: all 0.15s; font-family: inherit; }
   .sopa-celda:active { transform: scale(0.92); }
   .sopa-celda.seleccionada { background: #FFE9A8; border-color: #F0B429; transform: scale(1.08); }
   .sopa-celda.encontrada-ok { background: #C9F2C7; border-color: #4CAF50; }
   .sopa-celda.error-sel { background: #FFD6D6; border-color: #E57373; animation: temblar 0.4s; }
-
-  .sopa-puntaje { font-size: 1.1rem; color: #7B4EA8; font-weight: bold; margin-bottom: 8px; }
+  .sopa-puntaje { font-size: 1.3rem; color: #7B4EA8; font-weight: bold; margin-bottom: 10px; }
 
   #subir-nivel { display: none; position: fixed; inset: 0; background: rgba(123,78,168,0.93); z-index: 200; color: #fff; text-align: center; padding: 60px 24px; }
   #subir-nivel.ver { display: block; animation: aparecer 0.4s; }
   #subir-nivel .grande { font-size: 5rem; margin-bottom: 16px; }
-  #subir-nivel h2 { font-size: 2rem; margin-bottom: 10px; }
-  #subir-nivel p { font-size: 1.3rem; margin-bottom: 30px; }
-  #subir-nivel button { font-size: 1.4rem; background: #F0B429; color: #5B4000; border: none; border-radius: 40px; padding: 16px 40px; font-family: inherit; font-weight: bold; cursor: pointer; box-shadow: 0 5px 0 #C08F1A; }
+  #subir-nivel h2 { font-size: 2.2rem; margin-bottom: 10px; }
+  #subir-nivel p { font-size: 1.4rem; margin-bottom: 30px; }
+  #subir-nivel button { font-size: 1.5rem; background: #F0B429; color: #5B4000; border: none; border-radius: 40px; padding: 18px 44px; font-family: inherit; font-weight: bold; cursor: pointer; box-shadow: 0 5px 0 #C08F1A; }
 
-  .reset { margin-top: 34px; font-size: 0.8rem; color: #C9B79C; background: none; border: none; font-family: inherit; cursor: pointer; text-decoration: underline; }
-
-  @media (max-width: 480px) {
-    h1{font-size:1.6rem} .mascota{font-size:4rem} .btn-juego .icono{font-size:2.4rem} .btn-juego .nombre{font-size:1.05rem}
-    .btn-casa{width:50px;height:50px;font-size:1.6rem} .estrellas{font-size:1.2rem;padding:6px 14px}
-    .instruccion{font-size:1.15rem} .dibujo-grande{font-size:5.2rem} .btn-oir{font-size:1.05rem;padding:12px 22px}
-    .zona-armado{font-size:2rem;min-height:74px} .silaba{font-size:1.7rem;padding:12px 18px}
-    .opcion{font-size:1.5rem;padding:14px 16px;width:100%} .opciones.fila{flex-direction:column}
-    .frase{font-size:1.5rem} .hueco{min-width:80px}
-    .sopa-celda{width:44px;height:44px;font-size:1.3rem}
-    #subir-nivel h2{font-size:1.5rem}
-  }
+  .reset { margin-top: 34px; font-size: 0.85rem; color: #C9B79C; background: none; border: none; font-family: inherit; cursor: pointer; text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -112,7 +99,7 @@
 <div class="pantalla activa" id="inicio">
   <div class="mascota">🦉</div>
   <h1>¡Hola Jazmín!</h1>
-  <p class="subtitulo">Soy Lula la lechuza. ¡Vamos a jugar con las palabras!</p>
+  <p class="subtitulo">Soy Lula la lechuza. ¡Vamos a jugar!</p>
   <div class="menu-juegos">
     <button class="btn-juego" style="border-color:#F0B429" onclick="empezar('sil')">
       <span class="icono">🧩</span>
@@ -162,7 +149,7 @@
   <button class="btn-siguiente" id="sil-next" onclick="cargarSilaba()">Siguiente ➜</button>
 </div>
 
-<!-- JUEGO 2: PALABRA CORRECTA -->
+<!-- JUEGO 2: PALABRAS -->
 <div class="pantalla" id="palabras">
   <div class="nivel-badge" id="pal-nivel"></div>
   <div class="dibujo-grande" id="pal-dibujo"></div>
@@ -177,21 +164,21 @@
 <div class="pantalla" id="frases">
   <div class="nivel-badge" id="fra-nivel"></div>
   <p class="instruccion">Completá la frase</p>
-  <button class="btn-oir" onclick="decirFrase()">🔊 Escuchar la frase</button>
+  <button class="btn-oir" onclick="decirFrase()">🔊 Escuchar</button>
   <div class="frase" id="fra-texto"></div>
   <div class="opciones" id="fra-opciones"></div>
   <div class="celebracion" id="fra-cele">🎉 ¡Genial! ¡Leíste la frase!</div>
   <button class="btn-siguiente" id="fra-next" onclick="cargarFrase()">Siguiente ➜</button>
 </div>
 
-<!-- JUEGO 4: SOPA DE LETRAS -->
+<!-- JUEGO 4: SOPA -->
 <div class="pantalla" id="sopa-pantalla">
   <div class="nivel-badge" id="sopa-nivel"></div>
-  <p class="instruccion">Encontrá las palabras escondidas</p>
+  <p class="instruccion">Encontrá las palabras</p>
   <p class="sopa-puntaje">Encontradas: <span id="sopa-enc">0</span> de <span id="sopa-total">0</span></p>
   <div class="palabras-buscar" id="sopa-chips"></div>
   <div class="sopa-grid" id="sopa-grid"></div>
-  <div class="celebracion" id="sopa-cele">🎉 ¡Encontraste todas las palabras!</div>
+  <div class="celebracion" id="sopa-cele">🎉 ¡Encontraste todas!</div>
   <button class="btn-siguiente" id="sopa-next" onclick="cargarSopa()">Siguiente ➜</button>
 </div>
 
@@ -204,7 +191,6 @@
 </div>
 
 <script>
-/* ===== DATOS SÍLABAS — 5 niveles ===== */
 const SILABAS = {
   1:[
     {palabra:"gato",emoji:"🐱",partes:["GA","TO"]},
@@ -235,28 +221,28 @@ const SILABAS = {
     {palabra:"bicicleta",emoji:"🚲",partes:["BI","CI","CLE","TA"]},
     {palabra:"mandarina",emoji:"🍊",partes:["MAN","DA","RI","NA"]},
     {palabra:"cocodrilo",emoji:"🐊",partes:["CO","CO","DRI","LO"]},
-    {palabra:"calabaza",emoji:"🎃",partes:["CA","LA","BA","ZA"]},
-    {palabra:"zanahoria",emoji:"🥕",partes:["ZA","NA","HO","RIA"]}
+    {palabra:"zanahoria",emoji:"🥕",partes:["ZA","NA","HO","RIA"]},
+    {palabra:"calabaza",emoji:"🎃",partes:["CA","LA","BA","ZA"]}
   ],
   4:[
     {palabra:"hipopotamo",emoji:"🦛",partes:["HI","PO","PO","TA","MO"]},
-    {palabra:"refrigerador",emoji:"🧊",partes:["RE","FRI","GE","RA","DOR"]},
-    {palabra:"cumpleaños",emoji:"🎂",partes:["CUM","PLE","A","ÑOS"]},
-    {palabra:"paraguas",emoji:"☂️",partes:["PA","RA","GUAS"]},
+    {palabra:"dinosaurio",emoji:"🦕",partes:["DI","NO","SAU","RIO"]},
     {palabra:"murciélago",emoji:"🦇",partes:["MUR","CIÉ","LA","GO"]},
-    {palabra:"tortilla",emoji:"🫓",partes:["TOR","TI","LLA"]},
     {palabra:"girasol",emoji:"🌻",partes:["GI","RA","SOL"]},
-    {palabra:"dinosaurio",emoji:"🦕",partes:["DI","NO","SAU","RIO"]}
+    {palabra:"paraguas",emoji:"☂️",partes:["PA","RA","GUAS"]},
+    {palabra:"tortilla",emoji:"🫓",partes:["TOR","TI","LLA"]},
+    {palabra:"cumpleaños",emoji:"🎂",partes:["CUM","PLE","A","ÑOS"]},
+    {palabra:"mariposa",emoji:"🦋",partes:["MA","RI","PO","SA"]}
   ],
   5:[
-    {palabra:"trabajo",emoji:"💼",partes:["TRA","BA","JO"]},
     {palabra:"escritura",emoji:"✍️",partes:["ES","CRI","TU","RA"]},
-    {palabra:"construccion",emoji:"🏗️",partes:["CONS","TRUC","CION"]},
-    {palabra:"extraordinario",emoji:"🌟",partes:["EX","TRA","OR","DI","NA","RIO"]},
     {palabra:"electricidad",emoji:"⚡",partes:["E","LEC","TRI","CI","DAD"]},
     {palabra:"temperatura",emoji:"🌡️",partes:["TEM","PE","RA","TU","RA"]},
+    {palabra:"extraordinario",emoji:"🌟",partes:["EX","TRA","OR","DI","NA","RIO"]},
     {palabra:"comunicacion",emoji:"📡",partes:["CO","MU","NI","CA","CION"]},
-    {palabra:"transportar",emoji:"🚛",partes:["TRANS","POR","TAR"]}
+    {palabra:"transportar",emoji:"🚛",partes:["TRANS","POR","TAR"]},
+    {palabra:"construccion",emoji:"🏗️",partes:["CONS","TRUC","CION"]},
+    {palabra:"refrigerador",emoji:"🧊",partes:["RE","FRI","GE","RA","DOR"]}
   ]
 };
 
@@ -308,12 +294,12 @@ const FRASES = {
   ]
 };
 
-/* ===== DATOS SOPA DE LETRAS — 3 niveles ===== */
+/* SOPA — todas palabras reales en español */
 const SOPAS = {
   1:[
-    {palabras:["SOL","MAR","PEZ","UVA","OSO"]},
-    {palabras:["GAT","PAT","LUZ","RIO","FEO"]},
-    {palabras:["PAN","TEA","SOL","MAR","BUL"]}
+    {palabras:["SOL","MAR","PEZ","OJO","RIO"]},
+    {palabras:["PAN","MAR","OSO","UVA","SED"]},
+    {palabras:["SOL","PAN","RED","GEL","MAS"]}
   ],
   2:[
     {palabras:["GATO","LUNA","PATO","MESA"]},
@@ -321,23 +307,26 @@ const SOPAS = {
     {palabras:["PERA","MANO","SOPA","TREN"]}
   ],
   3:[
-    {palabras:["PERRO","FLORE","QUESO"]},
-    {palabras:["LIBRO","LECHE","SABRE"]},
-    {palabras:["NOCHE","TRUFA","CIELO"]}
+    {palabras:["PERRO","QUESO","LECHE"]},
+    {palabras:["LIBRO","NOCHE","CIELO"]},
+    {palabras:["TRUFA","MADRE","BARRO"]}
   ]
 };
 
 const META=5, NIVEL_MAX_SIL=5, NIVEL_MAX_PAL=3, NIVEL_MAX_FRA=3, NIVEL_MAX_SOPA=3;
+const TAMANIO=5;
+const DIRS=[[0,1],[1,0],[1,1],[-1,1],[0,-1],[-1,0],[-1,-1],[1,-1]];
+
 let prog={stars:0,sil:{n:1,a:0},pal:{n:1,a:0},fra:{n:1,a:0},sopa:{n:1,a:0}};
-let silActual, palActual, fraActual, silProgreso=0;
-let sopaData=[], sopaSeleccion=[], sopaEncontradas=[], sopaPalabrasAct=[];
+let silActual,palActual,fraActual,silProgreso=0;
+let sopaData=[],sopaSeleccion=[],sopaEncontradas=[],sopaPalabrasAct=[];
 
 function cargarProgreso(){
-  try{const g=localStorage.getItem('jazmin_lectura2');if(g)prog=JSON.parse(g);}catch(e){}
+  try{const g=localStorage.getItem('jazmin_v3');if(g)prog=JSON.parse(g);}catch(e){}
   pintarMenu();
 }
 function guardarProgreso(){
-  try{localStorage.setItem('jazmin_lectura2',JSON.stringify(prog));}catch(e){}
+  try{localStorage.setItem('jazmin_v3',JSON.stringify(prog));}catch(e){}
   pintarMenu();
 }
 function borrarProgreso(){
@@ -350,20 +339,15 @@ function pintarMenu(){
   document.getElementById('stars').textContent=prog.stars;
   [['sil',NIVEL_MAX_SIL],['pal',NIVEL_MAX_PAL],['fra',NIVEL_MAX_FRA],['sopa',NIVEL_MAX_SOPA]].forEach(([k,max])=>{
     const p=prog[k];
-    const enMax=p.n>=max&&p.a>=META;
-    document.getElementById('menu-'+k).textContent=enMax?'¡Nivel '+max+' completado! 🏆':'Nivel '+p.n+' · '+p.a+' de '+META+' ⭐';
+    const ok=p.n>=max&&p.a>=META;
+    document.getElementById('menu-'+k).textContent=ok?'¡Nivel '+max+' completado! 🏆':'Nivel '+p.n+' · '+p.a+' de '+META+' ⭐';
     document.getElementById('barra-'+k).style.width=Math.min(100,(p.a/META)*100)+'%';
   });
 }
 
 function mezclar(a){return [...a].sort(()=>Math.random()-0.5);}
 function alAzar(lista){return lista[Math.floor(Math.random()*lista.length)];}
-
-function irA(id){
-  document.querySelectorAll('.pantalla').forEach(p=>p.classList.remove('activa'));
-  document.getElementById(id).classList.add('activa');
-  window.speechSynthesis&&speechSynthesis.cancel();
-}
+function irA(id){document.querySelectorAll('.pantalla').forEach(p=>p.classList.remove('activa'));document.getElementById(id).classList.add('activa');window.speechSynthesis&&speechSynthesis.cancel();}
 
 function acierto(juego){
   prog.stars++;
@@ -371,50 +355,38 @@ function acierto(juego){
   const max=juego==='sil'?NIVEL_MAX_SIL:juego==='sopa'?NIVEL_MAX_SOPA:3;
   if(p.n<max||p.a<META)p.a++;
   confeti();
-  if(p.a>=META&&p.n<max){
-    p.n++;p.a=0;
-    guardarProgreso();
-    setTimeout(()=>mostrarSubida(p.n),1200);
-  } else {guardarProgreso();}
+  if(p.a>=META&&p.n<max){p.n++;p.a=0;guardarProgreso();setTimeout(()=>mostrarSubida(p.n),1200);}
+  else guardarProgreso();
 }
-
-function mostrarSubida(nivel){
-  document.getElementById('sn-texto').textContent='¡Ahora estás en el Nivel '+nivel+'! ¡Cada vez sos más grande!';
+function mostrarSubida(n){
+  document.getElementById('sn-texto').textContent='¡Ahora estás en el Nivel '+n+'! ¡Cada vez sos más grande!';
   document.getElementById('subir-nivel').classList.add('ver');
-  decir('¡Felicitaciones! ¡Subiste al nivel '+nivel+'!');
+  decir('¡Felicitaciones! ¡Subiste al nivel '+n+'!');
   confeti();setTimeout(confeti,600);
 }
 function cerrarNivel(){
   document.getElementById('subir-nivel').classList.remove('ver');
-  const activa=document.querySelector('.pantalla.activa').id;
-  if(activa==='silabas')cargarSilaba();
-  if(activa==='palabras')cargarPalabra();
-  if(activa==='frases')cargarFrase();
-  if(activa==='sopa-pantalla')cargarSopa();
+  const a=document.querySelector('.pantalla.activa').id;
+  if(a==='silabas')cargarSilaba();
+  if(a==='palabras')cargarPalabra();
+  if(a==='frases')cargarFrase();
+  if(a==='sopa-pantalla')cargarSopa();
 }
-
 function confeti(){
   const c=["🎉","⭐","✨","🌟","🎊"];
   for(let i=0;i<12;i++){
-    const el=document.createElement('div');
-    el.className='confeti';el.textContent=alAzar(c);
-    el.style.left=Math.random()*95+'vw';
-    el.style.animationDelay=(Math.random()*0.5)+'s';
+    const el=document.createElement('div');el.className='confeti';el.textContent=alAzar(c);
+    el.style.left=Math.random()*95+'vw';el.style.animationDelay=(Math.random()*0.5)+'s';
     document.body.appendChild(el);setTimeout(()=>el.remove(),2800);
   }
 }
-
 function decir(texto){
-  if(!window.speechSynthesis)return;
-  speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(texto);
-  u.lang='es-ES';u.rate=0.75;
-  const v=speechSynthesis.getVoices().find(v=>v.lang.startsWith('es'));
-  if(v)u.voice=v;
+  if(!window.speechSynthesis)return;speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(texto);u.lang='es-ES';u.rate=0.75;
+  const v=speechSynthesis.getVoices().find(v=>v.lang.startsWith('es'));if(v)u.voice=v;
   speechSynthesis.speak(u);
 }
 if(window.speechSynthesis)speechSynthesis.getVoices();
-
 function empezar(j){
   if(j==='sil'){cargarSilaba();irA('silabas');}
   if(j==='pal'){cargarPalabra();irA('palabras');}
@@ -422,12 +394,10 @@ function empezar(j){
   if(j==='sopa'){cargarSopa();irA('sopa-pantalla');}
 }
 
-/* ===== SÍLABAS ===== */
+/* SÍLABAS */
 function cargarSilaba(){
-  const nivel=prog.sil.n;
-  silActual=alAzar(SILABAS[nivel]);
-  silProgreso=0;
-  document.getElementById('sil-nivel').textContent='Nivel '+nivel+' de '+NIVEL_MAX_SIL;
+  silActual=alAzar(SILABAS[prog.sil.n]);silProgreso=0;
+  document.getElementById('sil-nivel').textContent='Nivel '+prog.sil.n+' de '+NIVEL_MAX_SIL;
   document.getElementById('sil-dibujo').textContent=silActual.emoji;
   document.getElementById('sil-zona').innerHTML='&nbsp;';
   document.getElementById('sil-cele').classList.remove('ver');
@@ -445,26 +415,17 @@ function tocarSilaba(btn,orden){
     document.getElementById('sil-zona').textContent=silActual.partes.slice(0,silProgreso).join('');
     decir(silActual.partes[orden].toLowerCase());
     if(silProgreso===silActual.partes.length){
-      setTimeout(()=>{
-        decir("¡Muy bien! "+silActual.palabra);
-        document.getElementById('sil-cele').classList.add('ver');
-        document.getElementById('sil-next').classList.add('ver');
-        acierto('sil');
-      },600);
+      setTimeout(()=>{decir("¡Correcto! Armaste la palabra: "+silActual.palabra+". ¡Muy bien Jazmín!");document.getElementById('sil-cele').classList.add('ver');document.getElementById('sil-next').classList.add('ver');acierto('sil');},600);
     }
-  } else {
-    btn.classList.add('mal');setTimeout(()=>btn.classList.remove('mal'),450);
-  }
+  } else {btn.classList.add('mal');setTimeout(()=>btn.classList.remove('mal'),450);}
 }
 
-/* ===== PALABRAS ===== */
+/* PALABRAS */
 function cargarPalabra(){
-  const nivel=prog.pal.n;
-  palActual=alAzar(PALABRAS[nivel]);
-  document.getElementById('pal-nivel').textContent='Nivel '+nivel+' de '+NIVEL_MAX_PAL;
+  palActual=alAzar(PALABRAS[prog.pal.n]);
+  document.getElementById('pal-nivel').textContent='Nivel '+prog.pal.n+' de '+NIVEL_MAX_PAL;
   document.getElementById('pal-dibujo').textContent=palActual.emoji;
-  document.getElementById('pal-cele').classList.remove('ver');
-  document.getElementById('pal-next').classList.remove('ver');
+  document.getElementById('pal-cele').classList.remove('ver');document.getElementById('pal-next').classList.remove('ver');
   const cont=document.getElementById('pal-opciones');cont.innerHTML='';
   mezclar([palActual.palabra,...palActual.falsas]).forEach(op=>{
     const b=document.createElement('button');b.className='opcion';b.textContent=op;
@@ -473,25 +434,16 @@ function cargarPalabra(){
   decir(palActual.palabra);
 }
 function elegirPalabra(btn,op){
-  if(op===palActual.palabra){
-    btn.classList.add('bien');decir("¡Excelente! "+palActual.palabra);
-    document.getElementById('pal-cele').classList.add('ver');
-    document.getElementById('pal-next').classList.add('ver');
-    document.querySelectorAll('#pal-opciones .opcion').forEach(o=>o.style.pointerEvents='none');
-    acierto('pal');
-  } else {
-    btn.classList.add('mal');decir("Probá otra vez");setTimeout(()=>btn.classList.remove('mal'),450);
-  }
+  if(op===palActual.palabra){btn.classList.add('bien');decir("¡Excelente! "+palActual.palabra);document.getElementById('pal-cele').classList.add('ver');document.getElementById('pal-next').classList.add('ver');document.querySelectorAll('#pal-opciones .opcion').forEach(o=>o.style.pointerEvents='none');acierto('pal');}
+  else{btn.classList.add('mal');decir("Probá otra vez");setTimeout(()=>btn.classList.remove('mal'),450);}
 }
 
-/* ===== FRASES ===== */
+/* FRASES */
 function cargarFrase(){
-  const nivel=prog.fra.n;
-  fraActual=alAzar(FRASES[nivel]);
-  document.getElementById('fra-nivel').textContent='Nivel '+nivel+' de '+NIVEL_MAX_FRA;
+  fraActual=alAzar(FRASES[prog.fra.n]);
+  document.getElementById('fra-nivel').textContent='Nivel '+prog.fra.n+' de '+NIVEL_MAX_FRA;
   document.getElementById('fra-texto').innerHTML=fraActual.antes+' <span class="hueco" id="fra-hueco">&nbsp;</span>';
-  document.getElementById('fra-cele').classList.remove('ver');
-  document.getElementById('fra-next').classList.remove('ver');
+  document.getElementById('fra-cele').classList.remove('ver');document.getElementById('fra-next').classList.remove('ver');
   const cont=document.getElementById('fra-opciones');cont.innerHTML='';
   mezclar([{...fraActual.correcta,ok:true},...fraActual.falsas.map(f=>({...f,ok:false}))]).forEach(op=>{
     const b=document.createElement('button');b.className='opcion';b.textContent=op.t;
@@ -501,100 +453,57 @@ function cargarFrase(){
 }
 function decirFrase(){decir(fraActual.antes+" ...");}
 function elegirFrase(btn,op){
-  if(op.ok){
-    btn.classList.add('bien');
-    document.getElementById('fra-hueco').textContent=op.t;
-    decir("¡Genial! "+fraActual.leer);
-    document.getElementById('fra-cele').classList.add('ver');
-    document.getElementById('fra-next').classList.add('ver');
-    document.querySelectorAll('#fra-opciones .opcion').forEach(o=>o.style.pointerEvents='none');
-    acierto('fra');
-  } else {
-    btn.classList.add('mal');decir("Probá otra vez");setTimeout(()=>btn.classList.remove('mal'),450);
-  }
+  if(op.ok){btn.classList.add('bien');document.getElementById('fra-hueco').textContent=op.t;decir("¡Genial! "+fraActual.leer);document.getElementById('fra-cele').classList.add('ver');document.getElementById('fra-next').classList.add('ver');document.querySelectorAll('#fra-opciones .opcion').forEach(o=>o.style.pointerEvents='none');acierto('fra');}
+  else{btn.classList.add('mal');decir("Probá otra vez");setTimeout(()=>btn.classList.remove('mal'),450);}
 }
 
-/* ===== SOPA DE LETRAS ===== */
-const TAMANIO=5;
-const DIRS=[[0,1],[1,0],[1,1],[-1,1],[0,-1],[-1,0],[-1,-1],[1,-1]];
-
+/* SOPA */
 function cargarSopa(){
-  const nivel=prog.sopa.n;
-  const set=alAzar(SOPAS[nivel]);
-  sopaPalabrasAct=[...set.palabras];
-  sopaEncontradas=[];
-  document.getElementById('sopa-nivel').textContent='Nivel '+nivel+' de '+NIVEL_MAX_SOPA;
-  document.getElementById('sopa-cele').classList.remove('ver');
-  document.getElementById('sopa-next').classList.remove('ver');
-  document.getElementById('sopa-enc').textContent='0';
-  document.getElementById('sopa-total').textContent=sopaPalabrasAct.length;
-  generarSopa(sopaPalabrasAct);
-  renderChips();
+  const set=alAzar(SOPAS[prog.sopa.n]);
+  sopaPalabrasAct=[...set.palabras];sopaEncontradas=[];
+  document.getElementById('sopa-nivel').textContent='Nivel '+prog.sopa.n+' de '+NIVEL_MAX_SOPA;
+  document.getElementById('sopa-cele').classList.remove('ver');document.getElementById('sopa-next').classList.remove('ver');
+  document.getElementById('sopa-enc').textContent='0';document.getElementById('sopa-total').textContent=sopaPalabrasAct.length;
+  generarSopa();renderChips();
 }
-
-function generarSopa(palabras){
+function generarSopa(){
   sopaData=Array.from({length:TAMANIO},()=>Array(TAMANIO).fill(''));
-  const colocadas=[];
-  for(const pal of palabras){
+  for(const pal of sopaPalabrasAct){
     let ok=false;
-    for(let intento=0;intento<200&&!ok;intento++){
+    for(let t=0;t<300&&!ok;t++){
       const [dr,dc]=DIRS[Math.floor(Math.random()*DIRS.length)];
-      const r=Math.floor(Math.random()*TAMANIO);
-      const c=Math.floor(Math.random()*TAMANIO);
-      if(cabe(pal,r,c,dr,dc)){
-        for(let i=0;i<pal.length;i++)sopaData[r+dr*i][c+dc*i]=pal[i];
-        colocadas.push({pal,r,c,dr,dc});ok=true;
-      }
+      const r=Math.floor(Math.random()*TAMANIO),c=Math.floor(Math.random()*TAMANIO);
+      if(cabe(pal,r,c,dr,dc)){for(let i=0;i<pal.length;i++)sopaData[r+dr*i][c+dc*i]=pal[i];ok=true;}
     }
   }
-  const letras='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  for(let r=0;r<TAMANIO;r++)for(let c=0;c<TAMANIO;c++)
-    if(!sopaData[r][c])sopaData[r][c]=letras[Math.floor(Math.random()*letras.length)];
+  const L='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  for(let r=0;r<TAMANIO;r++)for(let c=0;c<TAMANIO;c++)if(!sopaData[r][c])sopaData[r][c]=L[Math.floor(Math.random()*L.length)];
   renderGrilla();
 }
-
 function cabe(pal,r,c,dr,dc){
-  for(let i=0;i<pal.length;i++){
-    const nr=r+dr*i,nc=c+dc*i;
-    if(nr<0||nr>=TAMANIO||nc<0||nc>=TAMANIO)return false;
-    if(sopaData[nr][nc]&&sopaData[nr][nc]!==pal[i])return false;
-  }
-  return true;
+  for(let i=0;i<pal.length;i++){const nr=r+dr*i,nc=c+dc*i;if(nr<0||nr>=TAMANIO||nc<0||nc>=TAMANIO)return false;if(sopaData[nr][nc]&&sopaData[nr][nc]!==pal[i])return false;}return true;
 }
-
 function renderGrilla(){
   const grid=document.getElementById('sopa-grid');
-  grid.style.gridTemplateColumns=`repeat(${TAMANIO},1fr)`;
-  grid.innerHTML='';
-  sopaSeleccion=[];
+  grid.style.gridTemplateColumns=`repeat(${TAMANIO},1fr)`;grid.innerHTML='';sopaSeleccion=[];
   for(let r=0;r<TAMANIO;r++)for(let c=0;c<TAMANIO;c++){
-    const cel=document.createElement('div');
-    cel.className='sopa-celda';
-    cel.textContent=sopaData[r][c];
-    cel.dataset.r=r;cel.dataset.c=c;
-    cel.onclick=()=>tocarCelda(cel,r,c);
-    grid.appendChild(cel);
+    const cel=document.createElement('div');cel.className='sopa-celda';cel.textContent=sopaData[r][c];
+    cel.dataset.r=r;cel.dataset.c=c;cel.onclick=()=>tocarCelda(cel,r,c);grid.appendChild(cel);
   }
 }
-
 function renderChips(){
   const cont=document.getElementById('sopa-chips');cont.innerHTML='';
   sopaPalabrasAct.forEach(p=>{
-    const ch=document.createElement('div');
-    ch.className='palabra-chip'+(sopaEncontradas.includes(p)?' encontrada':'');
+    const ch=document.createElement('div');ch.className='palabra-chip'+(sopaEncontradas.includes(p)?' encontrada':'');
     ch.id='chip-'+p;ch.textContent=p;cont.appendChild(ch);
   });
 }
-
 function tocarCelda(cel,r,c){
   if(cel.classList.contains('encontrada-ok'))return;
   const key=r+'-'+c;
   const ya=sopaSeleccion.findIndex(s=>s.key===key);
-  if(ya>=0){
-    sopaSeleccion.splice(ya,1);cel.classList.remove('seleccionada');return;
-  }
-  sopaSeleccion.push({key,r,c,cel});
-  cel.classList.add('seleccionada');
+  if(ya>=0){sopaSeleccion.splice(ya,1);cel.classList.remove('seleccionada');return;}
+  sopaSeleccion.push({key,r,c,cel});cel.classList.add('seleccionada');
   const texto=sopaSeleccion.map(s=>sopaData[s.r][s.c]).join('');
   const rev=[...texto].reverse().join('');
   const match=sopaPalabrasAct.find(p=>p===texto||p===rev);
@@ -606,22 +515,13 @@ function tocarCelda(cel,r,c){
     document.getElementById('chip-'+match).classList.add('encontrada');
     decir("¡Encontraste "+match.toLowerCase()+"!");
     if(sopaEncontradas.length===sopaPalabrasAct.length){
-      setTimeout(()=>{
-        document.getElementById('sopa-cele').classList.add('ver');
-        document.getElementById('sopa-next').classList.add('ver');
-        acierto('sopa');
-      },600);
+      setTimeout(()=>{document.getElementById('sopa-cele').classList.add('ver');document.getElementById('sopa-next').classList.add('ver');acierto('sopa');},600);
     }
-  } else if(texto.length>=Math.max(...sopaPalabrasAct.map(p=>p.length))){
-    sopaSeleccion.forEach(s=>{
-      s.cel.classList.remove('seleccionada');
-      s.cel.classList.add('error-sel');
-      setTimeout(()=>s.cel.classList.remove('error-sel'),500);
-    });
+  } else if(texto.length>Math.max(...sopaPalabrasAct.map(p=>p.length))){
+    sopaSeleccion.forEach(s=>{s.cel.classList.remove('seleccionada');s.cel.classList.add('error-sel');setTimeout(()=>s.cel.classList.remove('error-sel'),500);});
     sopaSeleccion=[];
   }
 }
-
 cargarProgreso();
 </script>
 </body>
